@@ -1,0 +1,235 @@
+.about-section {
+  padding-top: 20px;
+  max-width: 1400px;
+  background-color: #f8f8f8;
+}
+
+.header-section-about {
+  position: relative;
+  padding: 70px 0px;
+  background: url("../../images/Productsbackground.png") no-repeat center;
+  background-size: cover;
+}
+
+.wave-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.about-section h1 {
+  font-size: 32px;
+  color: #1a1a1a;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  margin-top: -40px;
+}
+
+.section-container {
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.text-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.image-container {
+  flex: 1;
+  max-width: 40%;
+}
+
+.meeting-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .text-content,
+  .image-container {
+    max-width: 100%;
+  }
+
+  .header-sections {
+    margin-bottom: 30px;
+  }
+
+  .header-sections h1 {
+    font-size: 28px;
+  }
+
+  .text-content h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .text-content p {
+    text-align: center;
+  }
+}
+
+/* About.css - Add these new styles to your existing CSS */
+
+.vision-mission-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.vision-box,
+.mission-box {
+  flex: 1;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vision-box h3,
+.mission-box h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.vision-box p,
+.mission-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .vision-mission-container {
+    flex-direction: column;
+    margin: 40px auto;
+  }
+
+  .vision-box,
+  .mission-box {
+    width: 100%;
+  }
+}
+
+/* Update in your About.css */
+
+.stores-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.stores-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.stores-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.store-card {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.store-image-wrapper {
+  border: 2px solid black;
+  padding: 8px;
+  background: white;
+  position: relative;
+}
+
+.store-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.store-location {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 8px 20px;
+  min-width: 120px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .stores-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stores-grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 300px;
+    margin: 30px auto;
+  }
+}
