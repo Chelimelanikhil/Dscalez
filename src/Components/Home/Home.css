@@ -92,42 +92,21 @@
   }
 }
 
-.irritants-section {
-  padding: 60px 20px;
-  background-color: #f8f8f8;
-  text-align: center;
-}
-
-.irritants-title {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  color: #333;
-}
-
 .irritants-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow-x: auto;
-  padding: 20px 0;
+  gap: 0;
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
 }
 
 .irritant-item {
+  position: relative;
   flex: 1;
   min-width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.irritant-image-container {
-  width: 100%;
-  aspect-ratio: 1;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -139,31 +118,92 @@
 }
 
 .irritant-item:hover .irritant-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .irritant-name {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
   font-size: 18px;
-  font-weight: 500;
-  color: #444;
+  z-index: 2;
   margin: 0;
+  font-weight: 500;
+}
+
+.irritant-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.irritant-overlay h3 {
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.irritant-overlay p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.removal-rate {
+  color: #4CAF50;
+  font-weight: bold;
+  margin: 10px 0 !important;
+}
+
+.impact {
+  font-size: 12px !important;
+  color: #cccccc;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .irritants-container {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    padding-bottom: 20px;
+    flex-wrap: wrap;
   }
 
   .irritant-item {
-    min-width: 150px;
+    min-width: 50%;
+    height: 200px;
   }
 
-  .irritants-title {
-    font-size: 28px;
-    margin-bottom: 30px;
+  .irritant-overlay h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .irritant-overlay p {
+    font-size: 12px;
   }
 
   .irritant-name {
@@ -171,23 +211,10 @@
   }
 }
 
-/* Custom scrollbar for the container */
-.irritants-container::-webkit-scrollbar {
-  height: 6px;
-}
-
-.irritants-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.irritants-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
-}
-
-.irritants-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
+@media (max-width: 480px) {
+  .irritant-item {
+    min-width: 100%;
+  }
 }
 
 .benefits-section1 {
@@ -419,6 +446,11 @@
 
   .timeline__content {
     padding: 12px 15px;
+  }
+  .section {
+    padding: 10px 40px;
+   
+    margin: 0 auto;
   }
 }
 

@@ -5,6 +5,9 @@ import './products.css'
 import productsimages from '../../images/products.png'
 import WaterSofteners from '../../images/WaterSofteners.png'
 import SaltFree from '../../images/Salt-Free.png'
+import p1 from '../../images/productimage1.png'
+import p2 from '../../images/productimage2.png'
+
 
 
 const CheckIcon = () => (
@@ -21,31 +24,42 @@ const Products = () => {
       id: 1,
       title: "Dscalez Smart High Efficiency Water Softener",
       description: "Our most advanced softener offers hassle-free control through our app.",
+      image: p1,
     },
     {
       id: 2,
       title: "Dscalez Smart High Efficiency Water Softener",
       description: "Our most advanced softener offers hassle-free control through our app.",
+      image: p1,
+
     },
     {
       id: 3,
       title: "Dscalez Smart High Efficiency Water Softener",
       description: "Our most advanced softener offers hassle-free control through our app.",
+      image: p1,
+
     },
     {
       id: 4,
       title: "Dscalez Smart High Efficiency Municipal Water Softener with Chlorine Filtration",
       description: "Tackle hard water and chlorine, and control your system from your phone.",
+      image: p2,
+
     },
     {
       id: 5,
       title: "Dscalez Smart High Efficiency Municipal Water Softener with Chlorine Filtration",
       description: "Tackle hard water and chlorine, and control your system from your phone.",
+      image: p1,
+
     },
     {
       id: 6,
       title: "Dscalez Smart High Efficiency Municipal Water Softener with Chlorine Filtration",
       description: "Tackle hard water and chlorine, and control your system from your phone.",
+      image: p1,
+
     },
   ];
   const features = [
@@ -87,7 +101,7 @@ const Products = () => {
         {softenerData.map(softener => (
           <div key={softener.id} className="softener-card">
             <div className="softener-image">
-              <img src={productsimages} alt="Water Softener" />
+              <img src={softener.image} alt="Water Softener" />
             </div>
             <div className="softener-content">
               <h3>{softener.title}</h3>

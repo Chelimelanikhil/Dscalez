@@ -7,21 +7,13 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Function to toggle the mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Scroll to top and close menu after navigation
   const handleMenuClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth', // Smooth scrolling to the top
-    });
-
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (isMenuOpen) setIsMenuOpen(false);
   };
 
   const getActiveMenu = () => {
@@ -35,8 +27,8 @@ const Navbar = () => {
   };
 
   return (
-    <header>
-      <nav>
+    <header className="header">
+      <nav className="nav">
         <div className="logo">
           <img src={NavLogo} alt="Dscalez Logo" />
         </div>
@@ -78,8 +70,10 @@ const Navbar = () => {
           </Link>
           <button className="contact-btn">Contact Us</button>
         </div>
-        <div className="hamburger" onClick={toggleMenu}>
-          &#9776;
+        <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <span className="line"></span>
+          <span className="line"></span>
+          <span className="line"></span>
         </div>
       </nav>
     </header>

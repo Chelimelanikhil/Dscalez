@@ -5,16 +5,67 @@ import machine from '../../images/Rectangle.png'
 import group from '../../images/Group.png'
 import howitworks from '../../images/howitwork.png'
 import logo from '../../images/logo.png'
+import rust from '../../images/rust.png'
+import sediment from '../../images/sediment.png'
+import washroom from '../../images/washroom.png'
+import clothes from '../../images/clothes.png'
+import clean from '../../images/clean.png'
 
 
 export default function Home() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const irritants = [
-    { name: 'Rust', image: '/path-to-rust-image.jpg' },
-    { name: 'Sediment', image: '/path-to-sediment-image.jpg' },
-    { name: 'Chlorine', image: '/path-to-chlorine-image.jpg' },
-    { name: 'Heavy Metal', image: '/path-to-heavy-metal-image.jpg' },
-    { name: 'Arsenic', image: '/path-to-arsenic-image.jpg' }
+    {
+      name: 'Rust',
+      // Use placeholder image URLs - replace with your actual image paths
+      image: sediment
+    },
+    {
+      name: 'Sediment',
+      image: rust
+    },
+    {
+      name: 'Chlorine',
+      image: sediment
+    },
+    {
+      name: 'Heavy Metal',
+      image: rust
+    },
+    {
+      name: 'Arsenic',
+      image: sediment
+    }
   ];
+
+  const irritantDetails = {
+    Rust: {
+      description: "Causes staining and metallic taste",
+      removal_rate: "99.9%",
+      impact: "Can damage appliances and clothing"
+    },
+    Sediment: {
+      description: "Physical particles in water",
+      removal_rate: "99.8%",
+      impact: "Creates cloudy appearance and clogs filters"
+    },
+    Chlorine: {
+      description: "Common water treatment chemical",
+      removal_rate: "99.9%",
+      impact: "Affects taste and smell of water"
+    },
+    "Heavy Metal": {
+      description: "Including lead and mercury",
+      removal_rate: "99.7%",
+      impact: "Potential health hazard if untreated"
+    },
+    Arsenic: {
+      description: "Naturally occurring contaminant",
+      removal_rate: "99.6%",
+      impact: "Serious health concerns if present"
+    }
+  };
+
   const benefits = [
     {
       image: machine,
@@ -28,17 +79,17 @@ export default function Home() {
       featured: true
     },
     {
-      image: '/path-to-bathroom-image.jpg',
+      image: washroom,
       text: 'Get Smooth & Soft Skin',
       gridArea: 'top-right'
     },
     {
-      image: '/path-to-dishes-image.jpg',
+      image:clean,
       text: 'Removes 99% of Impurities',
       gridArea: 'bottom-left'
     },
     {
-      image: '/path-to-clothes-image.jpg',
+      image: clothes,
       text: 'Get Smooth & Soft Skin',
       gridArea: 'bottom-right'
     }
@@ -168,23 +219,35 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="irritants-section">
-        <h2 className="irritants-title">Eliminates 99% of water irritants</h2>
-        <div className="irritants-container">
-          {irritants.map((irritant, index) => (
-            <div key={index} className="irritant-item">
-              <div className="irritant-image-container">
-                <img
-                  src={irritant.image}
-                  alt={`${irritant.name} in water`}
-                  className="irritant-image"
-                />
-              </div>
-              <p className="irritant-name">{irritant.name}</p>
+      <div className="irritants-container">
+      {irritants.map((irritant, index) => (
+        <div 
+          key={index}
+          className="irritant-item"
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <img 
+            src={irritant.image} 
+            alt={irritant.name} 
+            className="irritant-image"
+          />
+          {hoveredIndex === index && (
+            <div className="irritant-overlay">
+              <h3>{irritant.name}</h3>
+              <p>{irritantDetails[irritant.name].description}</p>
+              <p className="removal-rate">
+                Removal Rate: {irritantDetails[irritant.name].removal_rate}
+              </p>
+              <p className="impact">
+                {irritantDetails[irritant.name].impact}
+              </p>
             </div>
-          ))}
+          )}
+          <p className="irritant-name">{irritant.name}</p>
         </div>
-      </div>
+      ))}
+    </div>
 
       <section className="benefits-section1">
         <h2 className="benefits-title">
