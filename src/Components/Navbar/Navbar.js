@@ -68,7 +68,12 @@ const Navbar = () => {
           >
             Gallery
           </Link>
+           <Link
+            to="/contact"
+            onClick={handleMenuClick}
+            >
           <button className="contact-btn">Contact Us</button>
+          </Link>
         </div>
         <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
           <span className="line"></span>
