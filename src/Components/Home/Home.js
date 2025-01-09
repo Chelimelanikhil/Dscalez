@@ -219,7 +219,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="irritants-container">
+   <section className='irritants-section'>
+   <h2 className="irritants-title">
+   Eliminates 99% of water irritants
+        </h2>
+   <div className="irritants-container">
       {irritants.map((irritant, index) => (
         <div 
           key={index}
@@ -248,6 +252,7 @@ export default function Home() {
         </div>
       ))}
     </div>
+   </section>
 
       <section className="benefits-section1">
         <h2 className="benefits-title">

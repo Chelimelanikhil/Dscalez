@@ -140,7 +140,7 @@ const Products = () => {
 
           {/* Header section */}
           <div className='header1'>
-            <div className="column">
+            <div className="column water-softeners">
               <div className="system-image">
                 <img src={WaterSofteners} alt="Water Softeners" />
               </div>
