@@ -38,11 +38,11 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <div className="contact-details">
             <div className="phone-number">
-              <img src={phone} alt="Phone" className="icon" />
+              <img src={phone} alt="Phone" className="icons" />
               <span>+91 7095221035</span>
             </div>
             <div className="email">
-              <img src={mail} alt="Email" className="icon" />
+              <img src={mail} alt="Email" className="icons" />
               <span>dscalez@dummyemail.com</span>
             </div>
             <div className="social-links">
@@ -74,7 +74,7 @@ const Footer = () => {
             loading="lazy"
           ></iframe>
           <div className="address">
-            <img src={Location} alt="Location" className="icon" />
+            <img src={Location} alt="Location" className="icons" />
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply.</p>
           </div>
         </div>
