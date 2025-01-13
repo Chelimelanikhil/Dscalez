@@ -30,7 +30,9 @@ const Navbar = () => {
     <header className="header">
       <nav className="nav">
         <div className="logo">
-          <img src={NavLogo} alt="Dscalez Logo" />
+          <Link to="/" onClick={handleMenuClick} className="logo">
+            <img src={NavLogo} alt="Dscalez Logo" />
+          </Link>
         </div>
         <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <Link
@@ -68,11 +70,12 @@ const Navbar = () => {
           >
             Gallery
           </Link>
-           <Link
+          <Link
             to="/contact"
+            className="contact-btn contact-link"
             onClick={handleMenuClick}
-            >
-          <button className="contact-btn">Contact Us</button>
+          >
+            Contact Us
           </Link>
         </div>
         <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>

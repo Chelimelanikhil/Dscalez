@@ -19,7 +19,6 @@
     height: auto;
     background-color: #fff;
     padding: 10px;
-    padding-left: 25px;
     border-radius: 10px;
   }
   
@@ -97,12 +96,16 @@
   .social-icon:hover {
     opacity: 0.8;
   }
-  
-  /* Map Section */
   .map-section {
     display: flex;
     flex-direction: column;
     gap: 15px;
+  }
+  
+  .map-section iframe {
+    width: 250px;
+    height: 120px;
+    border-radius: 3px;
   }
   
   .map-image {
@@ -156,29 +159,23 @@
       grid-column: span 2;
     }
   }
-  
   @media (max-width: 768px) {
     .footer-content {
       grid-template-columns: 1fr;
       gap: 40px;
     }
-    .footer-logo {
-       margin-left: 75px;
-      }
-        
-  .footer-section h3 {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
     
     .footer-section.map-section {
       grid-column: auto;
+      width: 100%;
+    }
+    
+    .map-section iframe {
+      width: 100%; /* Make iframe take full width */
+      height: 200px; /* Increase height for better visibility on mobile */
     }
     
     .links-grid {
       gap: 10px;
     }
-    
   }
