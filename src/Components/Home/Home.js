@@ -84,7 +84,7 @@ export default function Home() {
       gridArea: 'top-right'
     },
     {
-      image:clean,
+      image: clean,
       text: 'Removes 99% of Impurities',
       gridArea: 'bottom-left'
     },
@@ -219,44 +219,50 @@ export default function Home() {
         </div>
       </div>
 
-   <section className='irritants-section'>
-   <h2 className="irritants-title">
-   Eliminates 99% of water irritants
+      <section className='irritants-section'>
+        <h2 className="irritants-title">
+          Eliminates 99% of water irritants
         </h2>
-   <div className="irritants-container">
-      {irritants.map((irritant, index) => (
-        <div 
-          key={index}
-          className="irritant-item"
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <img 
-            src={irritant.image} 
-            alt={irritant.name} 
-            className="irritant-image"
-          />
-          {hoveredIndex === index && (
-            <div className="irritant-overlay">
-              <h3>{irritant.name}</h3>
-              <p>{irritantDetails[irritant.name].description}</p>
-              <p className="removal-rate">
-                Removal Rate: {irritantDetails[irritant.name].removal_rate}
-              </p>
-              <p className="impact">
-                {irritantDetails[irritant.name].impact}
-              </p>
+        <div className="irritants-container">
+          {irritants.map((irritant, index) => (
+            <div
+              key={index}
+              className="irritant-item"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <img
+                src={irritant.image}
+                alt={irritant.name}
+                className="irritant-image"
+              />
+              {hoveredIndex === index && (
+                <div className="irritant-overlay">
+                  <h3>{irritant.name}</h3>
+                  <p>{irritantDetails[irritant.name].description}</p>
+                  <p className="removal-rate">
+                    Removal Rate: {irritantDetails[irritant.name].removal_rate}
+                  </p>
+                  <p className="impact">
+                    {irritantDetails[irritant.name].impact}
+                  </p>
+                  <button className="see-more-btn">See More</button>
+                </div>
+              )}
+              <p className="irritant-name">{irritant.name}</p>
             </div>
-          )}
-          <p className="irritant-name">{irritant.name}</p>
+          ))}
         </div>
-      ))}
-    </div>
-   </section>
+      </section>
+
+
+
+
 
       <section className="benefits-section1">
         <h2 className="benefits-title">
-          Transform Your Life with Clean Water from Dscalez
+          Experience life changing purity with
+          Dscalez clean water solutions
         </h2>
 
         <div className="benefits-grid">
@@ -282,15 +288,17 @@ export default function Home() {
       </section>
 
 
+
+
+
       <section className="section">
         <h2 className="heading">How It Works ?</h2>
-
         <div className="container">
           <div className="timeline">
             {steps.map((step, index) => (
               <div key={index} className="timeline__item">
                 <div className="timeline__connector">
-                  <div className="timeline__dot"></div>
+                  <div className="timeline__number">{index + 1}</div>
                 </div>
                 <div className="timeline__content">
                   <h3 className="timeline__title">{step.title}</h3>
@@ -309,6 +317,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+
+
+
 
 
       <section className="reason-section">

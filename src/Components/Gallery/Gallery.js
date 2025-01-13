@@ -7,9 +7,6 @@ const Gallery = () => {
   const topImages = [
     featuredImagepic,
     featuredImagepic,
-    featuredImagepic,
-    featuredImagepic,
-    featuredImagepic,
     featuredImagepic
    
   ];

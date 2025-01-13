@@ -1,6 +1,9 @@
 // ContactSection.jsx
 import React, { useState } from 'react';
 import './ContactSection.css';
+import facebook from '../../images/Facebook.png';
+import instagram from '../../images/instagram.png';
+import LinkedIn from '../../images/Linkedin.png';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -63,13 +66,13 @@ const ContactSection = () => {
             <h3>Social Media</h3>
             <div className="social-icons">
               <a href="#" className="social-icon">
-                <img src="/path-to-your-images/facebook.png" alt="Facebook" />
+                <img src={facebook} alt="Facebook" />
               </a>
               <a href="#" className="social-icon">
-                <img src="/path-to-your-images/twitter.png" alt="Twitter" />
+                <img src={instagram} alt="Instagram" />
               </a>
               <a href="#" className="social-icon">
-                <img src="/path-to-your-images/youtube.png" alt="YouTube" />
+                <img src={LinkedIn} alt="Linkedin" />
               </a>
             </div>
           </div>
