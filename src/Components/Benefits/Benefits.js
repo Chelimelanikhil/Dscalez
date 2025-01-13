@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Benefits.css';
 
 const Benefits = () => {
@@ -28,6 +28,26 @@ const Benefits = () => {
       imagePosition: "left"
     }
   ];
+  useEffect(() => {
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.2
+    });
+
+    // Observe all benefit containers
+    document.querySelectorAll('.benefit-container').forEach(container => {
+      observer.observe(container);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="benefits-section1">
@@ -36,7 +56,10 @@ const Benefits = () => {
       </div>
 
       {benefitsData.map((benefit, index) => (
-        <div key={index} className={`benefit-container ${benefit.imagePosition === "right" ? 'image-right' : 'image-left'}`}>
+        <div 
+          key={index} 
+          className={`benefit-container ${benefit.imagePosition === "right" ? 'image-right' : 'image-left'}`}
+        >
           <div className="benefit-content">
             <h2>{benefit.title}</h2>
             <p>{benefit.description}</p>

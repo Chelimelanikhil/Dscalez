@@ -2,7 +2,6 @@
   background-color: #f8f8f8;
 }
 
-
 .hero-section {
   background-image: url("../../images/background.png");
   background-size: cover;
@@ -73,6 +72,7 @@
   max-width: 60%;
   height: auto;
 }
+
 /* Responsive Design */
 @media (max-width: 968px) {
   .hero-section {
@@ -80,12 +80,8 @@
   }
 
   .hero-content {
-    flex-direction: column-reverse; /* Reverse the order so the image appears on top */
+    flex-direction: column;
     text-align: center;
-  }
-
-  .hero-text {
-    margin-top: 20px; /* Add space between the image and text */
   }
 
   .hero-text h1 {
@@ -94,15 +90,6 @@
 
   .hero-text p {
     font-size: 16px;
-  }
-
-  .hero-image {
-    margin-bottom: 20px; /* Add spacing below the image */
-  }
-
-  .softener-img {
-    max-width: 100%; /* Ensure the image scales properly */
-    height: auto;
   }
 }
 

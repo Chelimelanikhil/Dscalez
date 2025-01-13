@@ -50,19 +50,20 @@ const Navbar = () => {
             Products
           </Link>
           <Link
-            to="/about"
-            className={getActiveMenu() === 'About Us' ? 'active' : ''}
-            onClick={handleMenuClick}
-          >
-            About Us
-          </Link>
-          <Link
             to="/benefits"
             className={getActiveMenu() === 'Benefits' ? 'active' : ''}
             onClick={handleMenuClick}
           >
             Benefits
           </Link>
+          <Link
+            to="/about"
+            className={getActiveMenu() === 'About Us' ? 'active' : ''}
+            onClick={handleMenuClick}
+          >
+            About Us
+          </Link>
+        
           <Link
             to="/gallery"
             className={getActiveMenu() === 'Gallery' ? 'active' : ''}

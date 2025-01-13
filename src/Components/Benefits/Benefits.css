@@ -3,27 +3,17 @@
   max-width: 100%;
   margin: 0;
   padding: 20px 0;
-}
-
-.benefit-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  min-height: 500px;
-  background: #fff;
+  background-color: #f8f8f8;
+  overflow-x: hidden; /* Prevent horizontal scroll during animations */
 }
 
 .header-section1 {
   width: 100%;
-  padding: 70px 0;
+  padding: 80px 0;
   background: url("../../images/Productsbackground.png") no-repeat center;
   background-size: cover;
-}
-
-.benefit-image img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
+  position: relative;
+  overflow: hidden;
 }
 
 .benefits-section1 h1 {
@@ -34,6 +24,24 @@
   position: relative;
   z-index: 2;
   margin-top: -40px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.benefit-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.benefit-container.animate {
+  animation-play-state: running;
 }
 
 .image-right {
@@ -51,12 +59,39 @@
   justify-content: center;
   background: #f8f8f8;
   grid-area: content;
+  position: relative;
+  z-index: 1;
+}
+
+.image-right .benefit-content {
+  animation: slideInLeft 1s ease-out;
+}
+
+.image-left .benefit-content {
+  animation: slideInRight 1s ease-out;
 }
 
 .benefit-image {
   height: 100%;
   overflow: hidden;
   grid-area: image;
+  position: relative;
+}
+
+.benefit-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.benefit-container:hover .benefit-image::after {
+  opacity: 1;
 }
 
 .benefit-content h2 {
@@ -64,6 +99,10 @@
   font-weight: bold;
   margin-bottom: 20px;
   line-height: 1.2;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 .benefit-content p {
@@ -71,6 +110,10 @@
   line-height: 1.6;
   color: #666;
   margin-bottom: 30px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+  animation-delay: 0.5s;
 }
 
 .shop-now {
@@ -82,19 +125,109 @@
   font-size: 16px;
   cursor: pointer;
   width: fit-content;
-  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+  animation-delay: 0.7s;
 }
 
 .shop-now:hover {
   background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shop-now::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.shop-now:hover::after {
+  left: 100%;
 }
 
 .benefit-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
+.benefit-container:hover .benefit-image img {
+  transform: scale(1.05);
+}
+
+/* Animation Keyframes */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
 @media (max-width: 968px) {
   .benefit-container {
     display: flex;

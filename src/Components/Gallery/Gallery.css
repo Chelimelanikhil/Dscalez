@@ -1,14 +1,15 @@
 /* Gallery.css */
 .gallery-section {
-  padding-top: 20px;
-  max-width: 1400px;
-  background-color: #F8F8F8;
-  margin-bottom: 10px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  background-color: #f8f8f8;
 }
 
 .header-section-gallery {
   position: relative;
-  padding: 70px 0px;
+  padding: 80px 0px;
   background: url("../../images/Productsbackground.png") no-repeat center;
   background-size: cover;
 }
@@ -109,3 +110,122 @@
     margin: 15px 0;
   }
 }
+/* Keyframes for animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations */
+.gallery-section h1 {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.top-grid .gallery-item {
+  animation: slideInFromLeft 1.2s ease-in-out;
+}
+
+.featured-image img {
+  animation: zoomIn 1.5s ease-in-out;
+}
+
+.bottom-grid .gallery-item {
+  animation: slideInFromRight 1.2s ease-in-out;
+}
+
+/* Add hover effects for more interactivity */
+.gallery-item:hover img {
+  transform: scale(1.1) rotate(2deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.featured-image:hover img {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Responsive adjustments remain the same */
+@media (max-width: 768px) {
+  .top-grid,
+  .bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    padding: 0 20px;
+  }
+
+  .top-grid,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .featured-image {
+    margin: 15px 0;
+  }
+}
+.featured-video {
+  margin: 30px 0;  /* Increased margin for more space around the video */
+  border-radius: 12px;
+  overflow: hidden;
+  animation: zoomIn 1.5s ease-in-out;
+  max-width: 1200px;  /* Max width for large screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-video iframe {
+  width: 100%;  /* Ensures full width of the parent container */
+  height: 400px;  /* Increased height for a larger video */
+  border-radius: 12px;
+}
+
+/* Hover effect for the video */
+.featured-video:hover iframe {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+
