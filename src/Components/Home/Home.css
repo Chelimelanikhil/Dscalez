@@ -6,14 +6,14 @@
   background-image: url("../../images/background.png");
   background-size: cover;
   background-position: center;
-  padding: 90px 90px;
+  padding: 100px 90px;
   min-height: 300px;
   position: relative;
   overflow: hidden;
 }
 
 .hero-content {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -23,7 +23,7 @@
 
 .hero-text {
   flex: 1;
-  max-width: 500px;
+font-family: 'Poppins', sans-serif;
 }
 
 .star-icon {
@@ -36,6 +36,8 @@
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+
   color: #000;
 }
 
@@ -93,6 +95,10 @@
   }
 }
 
+
+.irritants-section{
+  padding-top: 80px;
+}
 .irritants-container {
   display: flex;
   justify-content: center;
@@ -106,7 +112,7 @@
   position: relative;
   flex: 1;
   min-width: 200px;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -129,6 +135,8 @@
   text-align: center;
   color: white;
   font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+
   z-index: 2;
   margin: 0;
   font-weight: 500;
@@ -161,8 +169,8 @@
 .see-more-btn {
   margin-top: 15px;
   padding: 8px 20px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: #fff;
+  color: 000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -172,7 +180,7 @@
 }
 
 .see-more-btn:hover {
-  background-color: #45a049;
+  background-color: lightblue;
   transform: translateY(-2px);
 }
 
@@ -192,6 +200,8 @@
   font-weight: bold;
   color: #333;
   margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+
   line-height: 1.2;
 }
 
@@ -256,6 +266,25 @@
   }
 }
 
+.benefits-section-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-top: 80px;
+  background-color: #f8f8f8;
+  overflow-x: hidden; /* Prevent horizontal scroll during animations */
+}
+
+
+.benefits-section-container h1 {
+  font-size: 32px;
+  color: #1a1a1a;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1s ease-in-out;
+}
 .benefits-grid {
   display: grid;
   grid-template-areas:
@@ -351,8 +380,8 @@
 
 
 .section {
-  padding: 80px 120px;
-  max-width: 1200px;
+  padding: 80px;
+
   margin: 0 auto;
 }
 
@@ -373,7 +402,7 @@
 
 .timeline {
   flex: 1;
-  max-width: 800px;
+  max-width: 500px;
 }
 
 .timeline__item {
@@ -419,7 +448,7 @@
 
 .timeline__content {
   background-color: #fff;
-  padding: 24px;
+  padding: 14px;
   border-radius: 12px;
   /* Enhanced layered shadow for depth */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 8px 15px rgba(0, 0, 0, 0.1),
@@ -481,7 +510,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 40%;
+  max-width: 100%;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;

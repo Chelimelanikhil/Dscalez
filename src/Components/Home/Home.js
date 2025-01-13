@@ -259,7 +259,7 @@ export default function Home() {
 
 
 
-      <section className="benefits-section1">
+      <section className="benefits-section-container">
         <h2 className="benefits-title">
           Experience life changing purity with
           Dscalez clean water solutions
