@@ -7,7 +7,6 @@
   background-color: #f8f8f8;
 }
 
-
 .header-section-products {
   position: relative;
   padding: 80px 0px;
@@ -34,106 +33,152 @@
   z-index: 2;
   margin-top: -40px;
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .softener-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-
-  padding: 0 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .softener-card {
-  background: #fff;
+  background: white;
+  border: 1px solid #000;
   border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
 }
 
 .softener-card:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
 }
 
-.softener-image {
-  height: 250px;
-  background: #d9d9d9;
+.softener-card:hover .softener-image {
+  animation: float 2s ease-in-out infinite;
+}
+
+.softener-image-container {
+  height: 192px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden;
 }
 
-.softener-image img {
-  max-width: 150px;
-  height: auto;
+.softener-image {
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.softener-content {
-  padding: 20px;
-}
-
-.softener-content h3 {
-  font-size: 18px;
+.softener-title {
+  font-size: 14px;
   color: #333;
-  margin-bottom: 10px;
+  text-align: center;
+  margin: 0 0 16px 0;
   line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
-.softener-content p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 20px;
+.softener-card:hover .softener-title {
+  color: #0066cc;
 }
 
-.button-container {
+.arrow-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  justify-content: flex-end;
 }
 
-.top-pick-btn {
-  background: #00bcd4;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.arrow-btn {
+.arrow-button {
   background: none;
   border: none;
   font-size: 20px;
-  color: #333;
+  color: #666;
   cursor: pointer;
-  padding: 8px;
-  margin-left: auto;
+  padding: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.arrow-button:hover {
+  color: #0066cc;
+  animation: pulse 1s infinite;
+}
+
+.arrow-button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0066cc;
+  transition: width 0.3s ease;
+}
+
+.arrow-button:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .softener-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-
-  .water-softeners h1 {
-    font-size: 28px;
-  }
-
-  .header-section {
-    padding: 30px 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
   }
 }
 
-/* WaterSoftenerAlternatives.css */
+@media (max-width: 480px) {
+  .softener-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .alternatives-section {
   background-color: #fff;
   padding: 40px 20px;
   margin: 40px auto;
-  max-width: 1600px;
+  max-width: 1440px;
   text-align: center;
 }
 
@@ -189,9 +234,9 @@
   }
 }
 .comparison-container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 40px 20px;
   width: 100%;
 }
 
@@ -220,24 +265,19 @@
   padding: 10px;
   width: 100%;
   margin-bottom: -40px;
-  margin-left: 120px;
- 
+  margin-left: 105px;
 }
-.column.water-softeners{
+.column.water-softeners {
   margin-right: 20px;
   text-align: start;
-  
 }
-.column.water-softeners p{
+.column.water-softeners p {
   text-align: start;
- 
 }
-
 
 .column.salt-free {
   background-color: #eaeaea;
-  padding: 10px 70px;
- 
+  padding: 10px 65px;
 }
 
 @media (max-width: 768px) {
@@ -253,11 +293,10 @@
     background-color: #eaeaea;
     padding: 10px 19px;
   }
-  .column p{
+  .column p {
     font-size: 10px;
   }
 }
-
 
 .system-image {
   margin-bottom: 15px;
@@ -282,6 +321,7 @@
   grid-template-columns: 40% 30% 30%;
   width: 100%;
   position: relative;
+  padding: 20px;
 }
 
 /* Modified benefits label styling */
@@ -308,11 +348,10 @@
 .benefits-section::after {
   content: "";
   position: absolute;
-  top: 47.5px; /* Adjust this value to align with the bold line */
-  left: 48;
+  top: 67px; /* Adjust this value to align with the bold line */
   width: 80%;
   border-bottom: 1px solid #e0e0e0; /* Lighter line */
-  margin-left: 93px;
+  margin-left: 105px;
 }
 
 .feature-row {
@@ -378,74 +417,152 @@
   grid-column: 1;
   height: 100%;
 }
-
-/* Container Section */
-.customer-section {
+.testimonial-container {
   display: flex;
+  gap: 48px;
+  padding: 40px;
+  background-color: #f8f8f8;
+  min-height: 400px;
   align-items: center;
-  padding: 20px;
-
-  border-radius: 10px;
-
-  gap: 20px;
 }
 
-/* Video Section (3/4 Area) */
-.video-section {
-  flex: 3; /* Occupies 3/4 of the area */
+.video-container {
+  flex: 1.5;
   position: relative;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 .video-wrapper {
   position: relative;
-  padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
-}
-
-.youtube-video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 10px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 90%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.6)
-  );
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1;
+  justify-content: center;
+  z-index: 2;
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.youtube-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .play-button {
-  background: rgba(255, 255, 255, 0.8);
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  transition: all 0.3s ease;
 }
 
-.play-button span {
-  font-size: 24px;
-  color: black;
+.play-button:hover {
+  background: #fff;
+  transform: scale(1.1);
 }
 
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.content-container h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.content-container p {
+  font-size: 18px;
+  color: #4a4a4a;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.play-video-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.play-video-link:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .content-container h2 {
+    font-size: 28px;
+  }
+  .benefits-section::after {
+    content: "";
+    position: absolute;
+    top: 67px; /* Adjust this value to align with the bold line */
+    width: 80%;
+    border-bottom: 1px solid #e0e0e0; /* Lighter line */
+    margin-left: 0px;
+  }
+  .content-container p {
+    font-size: 16px;
+  }
+}
 /* Text Section (1/4 Area) */
 .text-section {
   flex: 1; /* Occupies 1/4 of the area */
@@ -477,48 +594,95 @@
   font-size: 18px;
 }
 
-.faq-section {
-  max-width: 800px;
+.faq-container {
+  max-width: 1440px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
-  margin-bottom: 50px;
-  padding: 20px;
+  padding: 80px 60px;
+  background-color: white;
 }
 
-.faq-section h2 {
+.faq-container h1 {
+  font-size: 36px;
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  color: #000;
+  font-weight: 600;
 }
 
 .faq-list {
-  border-top: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: #000e2e66;
 }
 
 .faq-item {
-  border-bottom: 1px solid #ccc;
+  background-color: white;
+  border: none;
 }
+
 
 .faq-question {
-  padding: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  text-align: left;
   cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.faq-question.active {
-  color: #007bff;
+.faq-question span {
+  flex: 1;
+  padding-right: 20px;
 }
 
-.toggle-icon {
-  font-size: 1.2rem;
+.chevron-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.active .chevron-icon {
+  transform: rotate(180deg);
 }
 
 .faq-answer {
-  padding: 0.8rem 1rem;
-  font-size: 0.9rem;
-  background-color: #f4f4f4;
-  color: #333;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 100px;
+}
+
+.answer-content {
+  padding: 0 0px 24px;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 60px 16px;
+  }
+
+  .faq-container h1 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .faq-question {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .answer-content {
+    padding: 0 16px 16px;
+  }
 }

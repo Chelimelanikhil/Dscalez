@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+
 import './Home.css'
 import productimage from '../../images/product.png'
 import machine from '../../images/Rectangle.png'
@@ -10,6 +12,13 @@ import sediment from '../../images/sediment.png'
 import washroom from '../../images/washroom.png'
 import clothes from '../../images/clothes.png'
 import clean from '../../images/clean.png'
+import Ram from '../../images/Ram.png'
+import p1 from '../../images/productimage1.png'
+import p2 from '../../images/productimage2.png'
+import p3 from '../../images/p3.png'
+import p4 from '../../images/p4.png'
+
+
 
 
 export default function Home() {
@@ -139,37 +148,59 @@ export default function Home() {
     logo,
     logo,
     logo,
-    logo,
-    logo,
-    logo,
-    logo
+
   ];
 
   const testimonials = [
     {
       id: 1,
       name: 'Ram',
-      image: '/api/placeholder/400/400',
+      image: Ram,
       content: 'Lorem ipsum dolor sit amet consectetur. Tincidunt commodo pellentesque pharetra nunc tortor purus neque mi. Quis massa volutpat eu neque mauris est. Viverra senectus erat tristique fames at',
       date: 'May 9,2025',
       location: 'Nizamabad'
     }, {
       id: 2,
       name: 'Sita',
-      image: '/api/placeholder/400/400',
+      image: Ram,
       content: 'Lorem ipsum dolor sit amet consectetur. Tincidunt commodo pellentesque pharetra nunc tortor purus neque mi. Quis massa volutpat eu neque mauris est. Viverra senectus erat tristique fames at',
       date: 'May 9,202',
       location: 'Nizamabad'
     }, {
       id: 3,
       name: 'Laxman',
-      image: '/api/placeholder/400/400',
+      image: Ram,
       content: 'Lorem ipsum dolor sit amet consectetur. Tincidunt commodo pellentesque pharetra nunc tortor purus neque mi. Quis massa volutpat eu neque mauris est. Viverra senectus erat tristique fames at',
       date: 'May 9,2025',
       location: 'Nizamabad'
     },
     // Add more testimonials as needed
   ];
+
+
+  const products = [
+    {
+      id: 1,
+      title: "Dscalez Smart High -1355 Efficiency Municipal",
+      image: p2,
+    },
+    {
+      id: 2,
+      title: "Dscalez Smart High -1355 Efficiency Municipal",
+      image: p3,
+    },
+    {
+      id: 3,
+      title: "Dscalez Smart High -1355 Efficiency Municipal",
+      image: p4,
+    },
+    {
+      id: 4,
+      title: "Dscalez Smart High -1355 Efficiency Municipal",
+      image: p1,
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
@@ -192,7 +223,10 @@ export default function Home() {
     console.log('Subscribing email:', email);
     setEmail('');
   };
-
+  const handleMenuClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+  };
 
   return (
     <div className='home'>
@@ -319,7 +353,21 @@ export default function Home() {
       </section>
 
 
-
+      <div className="water-softening-section">
+        <h2 className="section-title">Water Softening and Filtration Solutions</h2>
+        <div className="products-container">
+          {products.map((product) => (
+            <div className="product-card" key={product.id}>
+              <img src={product.image} alt={product.title} className="product-image" />
+              <h3 className="product-title">{product.title}</h3>
+              <Link to={`/products`} className="product-arrow"
+              onClick={handleMenuClick} >
+              →
+            </Link>
+            </div>
+          ))}
+        </div>
+      </div>
 
 
 
@@ -338,34 +386,19 @@ export default function Home() {
       </section>
 
 
-
       <div className="logo-section">
         <div className="logo-container">
           <h2>Our Brands</h2>
-
           <div className="logo-scroll">
-            {/* First set of logos */}
-            {logos.map((logo, index) => (
-              <div key={`logo-1-${index}`} className="logo-item">
-                <img
-                  src={logo}
-                  alt={`Aquapot Logo ${index + 1}`}
-                />
-              </div>
-            ))}
-
-            {/* Duplicate set for seamless scrolling */}
-            {logos.map((logo, index) => (
-              <div key={`logo-2-${index}`} className="logo-item">
-                <img
-                  src={logo}
-                  alt={`Aquapot Logo ${index + 1}`}
-                />
+            {logos.concat(logos).map((logo, index) => (
+              <div key={`logo-${index}`} className="logo-item">
+                <img src={logo} alt={`Logo ${index + 1}`} />
               </div>
             ))}
           </div>
         </div>
       </div>
+
 
 
       <div className="testimonial-section">

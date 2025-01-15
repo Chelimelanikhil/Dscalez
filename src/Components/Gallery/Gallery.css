@@ -4,7 +4,6 @@
   max-width: 100%;
   margin: 0;
   padding: 20px 0;
-  background-color: #f8f8f8;
 }
 
 .header-section-gallery {
@@ -34,179 +33,95 @@
   margin-top: -40px;
 }
 
-.gallery-container {
-  padding: 0 20px;
+.gallery-wrapper {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.top-grid {
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
+  grid-template-columns: 65% 35%;
+  gap: 15px;
+  width: 100%;
+  height: 500px;
 }
 
-.featured-image {
-  margin: 20px 0;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.bottom-grid {
+.gallery-grid1 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: 35% 65%;
+  gap: 15px;
+  width: 100%;
+  height: 500px;
 }
 
 .gallery-item {
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
-  background: #f0f0f0;
+  background-color: #f8f8f8;
+  height: 100%;
 }
 
-/* Vertical aspect ratio for top images */
-.top-item {
-  aspect-ratio: 3/4;
-}
-
-/* Horizontal aspect ratio for bottom images */
-.bottom-item {
-  aspect-ratio: 16/10;
-}
-
-.gallery-item img,
-.featured-image img {
+.gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
+.gallery-item img:hover {
+  transform: scale(1.02);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .top-grid,
-  .bottom-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-container {
-    padding: 0 20px;
-  }
-
-  .top-grid,
-  .bottom-grid {
+  .gallery-grid,
+  .gallery-grid1 {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
+    height: auto;
   }
 
-  .featured-image {
-    margin: 15px 0;
+  /* Large image styles */
+  .gallery-item.large-image {
+    aspect-ratio: 16/9;
   }
-}
-/* Keyframes for animations */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+
+  /* Small image styles - making it taller than large images */
+  .gallery-item.small-image {
+    aspect-ratio: 9/16;  /* This creates a taller aspect ratio */
+  }.gallery-grid1 .gallery-item.large-image {
+    order: -1;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .gallery-wrapper {
+    padding: 10px;
   }
-}
 
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Apply animations */
-.gallery-section h1 {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.top-grid .gallery-item {
-  animation: slideInFromLeft 1.2s ease-in-out;
-}
-
-.featured-image img {
-  animation: zoomIn 1.5s ease-in-out;
-}
-
-.bottom-grid .gallery-item {
-  animation: slideInFromRight 1.2s ease-in-out;
-}
-
-/* Add hover effects for more interactivity */
-.gallery-item:hover img {
-  transform: scale(1.1) rotate(2deg);
-  transition: transform 0.5s ease-in-out;
-}
-
-.featured-image:hover img {
-  transform: scale(1.05);
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Responsive adjustments remain the same */
-@media (max-width: 768px) {
+  /* Adjusting spacing between grid sections */
   .top-grid,
   .bottom-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    margin-bottom: 30px;
   }
 }
 
+/* Extra small devices */
 @media (max-width: 480px) {
-  .gallery-container {
-    padding: 0 20px;
+  .gallery-wrapper {
+    padding: 5px;
   }
-
-  .top-grid,
-  .bottom-grid {
-    grid-template-columns: 1fr;
+  .gallery-grid1 .gallery-item.large-image {
+    order: -1;
+  }
+  
+  .gallery-grid,
+  .gallery-grid1 {
     gap: 15px;
   }
-
-  .featured-image {
-    margin: 15px 0;
-  }
 }
+
 .featured-video {
   margin: 30px 0;  /* Increased margin for more space around the video */
   border-radius: 12px;

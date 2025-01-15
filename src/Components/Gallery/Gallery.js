@@ -23,8 +23,8 @@ const Gallery = () => {
 
   useScrollAnimation();
 
-  const topImages = [featuredImagepic, featuredImagepic, featuredImagepic];
-  const bottomImages = Array(6).fill(featuredImagepic);
+  const topImages = [featuredImagepic, featuredImagepic, featuredImagepic, featuredImagepic];
+  const bottomImages = Array(4).fill(featuredImagepic);
 
   return (
     <div className="gallery-section">
@@ -33,13 +33,49 @@ const Gallery = () => {
       </div>
 
       <div className="gallery-container">
+
+
         <div className="top-grid">
-          {topImages.map((image, index) => (
-            <div key={`top-${index}`} className="gallery-item top-item">
-              <img src={image} alt={`Gallery item ${index + 1}`} />
+
+          <div className="gallery-wrapper">
+            <div className="gallery-grid">
+              <div className="gallery-item large-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Team at Aquapot exhibition stand"
+                />
+              </div>
+              <div className="gallery-item small-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Individual portrait outdoors"
+                />
+              </div>
             </div>
-          ))}
+
+          </div>
+          <div className="gallery-wrapper">
+            <div className="gallery-grid1">
+              <div className="gallery-item small-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Individual portrait outdoors"
+                />
+              </div>
+              <div className="gallery-item large-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Team at Aquapot exhibition stand"
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+
         </div>
+
 
         <div className="featured-video">
           <iframe
@@ -54,11 +90,42 @@ const Gallery = () => {
         </div>
 
         <div className="bottom-grid">
-          {bottomImages.map((image, index) => (
-            <div key={`bottom-${index}`} className="gallery-item bottom-item">
-              <img src={image} alt={`Team photo ${index + 1}`} />
+          <div className="gallery-wrapper">
+            <div className="gallery-grid">
+              <div className="gallery-item large-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Team at Aquapot exhibition stand"
+                />
+              </div>
+              <div className="gallery-item small-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Individual portrait outdoors"
+                />
+              </div>
             </div>
-          ))}
+
+          </div>
+          <div className="gallery-wrapper">
+            <div className="gallery-grid1">
+              <div className="gallery-item small-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Individual portrait outdoors"
+                />
+              </div>
+              <div className="gallery-item large-image">
+                <img
+                  src={featuredImagepic}
+                  alt="Team at Aquapot exhibition stand"
+                />
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>

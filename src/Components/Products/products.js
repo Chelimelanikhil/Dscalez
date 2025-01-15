@@ -7,61 +7,73 @@ import WaterSofteners from '../../images/WaterSofteners.png'
 import SaltFree from '../../images/Salt-Free.png'
 import p1 from '../../images/productimage1.png'
 import p2 from '../../images/productimage2.png'
-
+import p3 from '../../images/p3.png'
+import p4 from '../../images/p4.png'
+import check from '../../images/check.png'
 
 
 const CheckIcon = () => (
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-  </svg>
+  <img src={check} alt="check icon" width="15" height="15" />
 );
 
 const Products = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoId = "dQw4w9WgXcQ"; // Replace with your YouTube video ID
 
-  const softenerData = [
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const softeners = [
     {
       id: 1,
-      title: "Dscalez Smart High Efficiency Water Softener",
-      description: "Our most advanced softener offers hassle-free control through our app.",
       image: p1,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
     },
     {
       id: 2,
-      title: "Dscalez Smart High Efficiency Water Softener",
-      description: "Our most advanced softener offers hassle-free control through our app.",
-      image: p1,
-
+      image: p2,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
     },
     {
       id: 3,
-      title: "Dscalez Smart High Efficiency Water Softener",
-      description: "Our most advanced softener offers hassle-free control through our app.",
-      image: p1,
-
+      image: p3,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
     },
     {
       id: 4,
-      title: "Dscalez Smart High Efficiency Municipal Water Softener with Chlorine Filtration",
-      description: "Tackle hard water and chlorine, and control your system from your phone.",
-      image: p2,
-
+      image: p1,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
     },
     {
       id: 5,
-      title: "Dscalez Smart High Efficiency Municipal Water Softener with Chlorine Filtration",
-      description: "Tackle hard water and chlorine, and control your system from your phone.",
-      image: p1,
-
+      image: p2,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
     },
     {
       id: 6,
-      title: "Dscalez Smart High Efficiency Municipal Water Softener with Chlorine Filtration",
-      description: "Tackle hard water and chlorine, and control your system from your phone.",
-      image: p1,
-
+      image: p3,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
     },
+    {
+      id: 7,
+      image: p4,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
+    },
+    {
+      id: 8,
+      image: p1,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
+    },
+    {
+      id: 9,
+      image: p2,
+      title: 'Dscalez Smart High -1355 Efficiency Municipal'
+    }
   ];
+
+
   const features = [
     { name: "Makes cleaning easier", waterSoftener: true, saltFree: true },
     { name: "Reduces limescale buildup", waterSoftener: true, saltFree: true },
@@ -72,44 +84,68 @@ const Products = () => {
   ];
 
   const faqData = [
-    { question: "What is water hardness?", answer: "Water hardness refers to..." },
-    { question: "What is water softening?", answer: "Water softening is a..." },
-    { question: "How does the water softening process work?", answer: "The process involves..." },
+    {
+      question: "What is water hardness?",
+      answer: "Water hardness refers to the mineral content in your water, particularly calcium and magnesium..."
+    },
+    {
+      question: "What is water softening?",
+      answer: "Water softening is the process of removing calcium, magnesium, and other metal cations from hard water..."
+    },
+    {
+      question: "How does the water softening process work?",
+      answer: "The water softening process works through ion exchange, replacing hard minerals with sodium ions..."
+    },
     {
       question: "What is a water softening system and how does it work?",
-      answer: "A water softening system...",
+      answer: "A water softening system is a home appliance that removes hardness minerals from your water..."
     },
-    { question: "What are the benefits of water softening?", answer: "The benefits include..." },
-    { question: "How much does a water softening system cost?", answer: "The cost depends on..." },
-    { question: "How long does a home water softening system last?", answer: "Typically, it lasts..." },
+    {
+      question: "What are the benefits of water softening?",
+      answer: "Water softening provides numerous benefits including reduced scale buildup, better soap lathering..."
+    },
+    {
+      question: "How much does a water softening system cost?",
+      answer: "The cost of a water softening system varies depending on size, features, and installation..."
+    },
+    {
+      question: "How long does a home water softening system last?",
+      answer: "A well-maintained water softening system typically lasts 10-15 years..."
+    },
     {
       question: "How do I choose the best water softening system for my home?",
-      answer: "To choose the best system...",
-    },
+      answer: "Choosing the best water softening system depends on your water hardness level, household size..."
+    }
   ];
 
-  const toggleAnswer = (index) => {
-    setActiveIndex(index === activeIndex ? null : index);
-  };
 
+  const toggleQuestion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
   return (
     <div className="water-softeners">
       <div className="header-section-products">
         <h1>Whole House Water Softeners</h1>
       </div>
+
+
       <div className="softener-grid">
-        {softenerData.map(softener => (
-          <div key={softener.id} className="softener-card">
-            <div className="softener-image">
-              <img src={softener.image} alt="Water Softener" />
+        {softeners.map((softener, index) => (
+          <div
+            key={softener.id}
+            className="softener-card"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <div className="softener-image-container">
+              <img
+                src={softener.image}
+                alt={softener.title}
+                className="softener-image"
+              />
             </div>
-            <div className="softener-content">
-              <h3>{softener.title}</h3>
-              <p>{softener.description}</p>
-              <div className="button-container">
-                <button className="top-pick-btn">Top Pick</button>
-                <button className="arrow-btn">→</button>
-              </div>
+            <h3 className="softener-title">{softener.title}</h3>
+            <div className="arrow-container">
+              <button className="arrow-button">→</button>
             </div>
           </div>
         ))}
@@ -178,60 +214,108 @@ const Products = () => {
 
 
 
-      <div className="customer-section">
-        {/* Video Section */}
-        <div className="video-section">
+      <div className="testimonial-container">
+        <div className="video-container">
           <div className="video-wrapper">
-            <div className="video-overlay">
+            {!isPlaying ? (
+              <>
+                <div className="video-overlay">
+                  <button className="play-button" onClick={handlePlay}>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 5v14l11-7L8 5z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div className="video-placeholder">
+                  <img
+                    src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                    alt="Video thumbnail"
+                    className="video-thumbnail"
+                  />
+                </div>
+              </>
+            ) : (
               <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your YouTube video URL
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
                 title="Customer Testimonial"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="youtube-video"
-              ></iframe>
-              <div className="play-button">
-                <span>&#9658;</span>
+                className="youtube-iframe"
+              />
+            )}
+          </div>
+        </div>
+        <div className="content-container">
+          <h2>Hear What Customers Say</h2>
+          <p>"Coming out of the shower, it just feels like you have moisturizer on." — Dscalez</p>
+          <button className="play-video-link" onClick={handlePlay}>
+            Play Video
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="arrow-icon"
+            >
+              <path
+                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div className="faq-container">
+      <h1>Frequently Asked Questions</h1>
+      <div className="faq-list">
+        {faqData.map((item, index) => (
+          <div 
+            key={index} 
+            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+          >
+            <button 
+              className="faq-question"
+              onClick={() => toggleQuestion(index)}
+              aria-expanded={activeIndex === index}
+            >
+              <span>{item.question}</span>
+              <svg 
+                className="chevron-icon"
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  d="M6 9l6 6 6-6" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <div className="faq-answer">
+              <div className="answer-content">
+                {item.answer}
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Text Section */}
-        <div className="text-section">
-          <h2 className="heading">Hear What Customers Say</h2>
-          <p className="quote">
-            Coming out of the shower, it just feels like you have moisturizer on.
-            — Stacey R
-          </p>
-          <a href="#play-video" className="link">
-            Play Video <span className="arrow">&rarr;</span>
-          </a>
-        </div>
+        ))}
       </div>
-
-      <div style={{ backgroundColor: '#fff' }}>
-
-        <div className="faq-section">
-          <h2>Frequently Asked Questions</h2>
-          <div className="faq-list">
-            {faqData.map((faq, index) => (
-              <div className="faq-item" key={index}>
-                <div
-                  className={`faq-question ${activeIndex === index ? "active" : ""}`}
-                  onClick={() => toggleAnswer(index)}
-                >
-                  {faq.question}
-                  <span className="toggle-icon">
-                    {activeIndex === index ? "−" : "+"}
-                  </span>
-                </div>
-                {activeIndex === index && <div className="faq-answer">{faq.answer}</div>}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+    </div>
 
 
     </div>
