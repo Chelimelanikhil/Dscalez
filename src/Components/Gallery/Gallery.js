@@ -32,7 +32,7 @@ const Gallery = () => {
         <h1>Gallery</h1>
       </div>
 
-      <div className="gallery-container">
+      <div className="gallery-container-gallery">
 
 
         <div className="top-grid">
