@@ -92,6 +92,8 @@
   transform: translateY(-5px);
 }
 
+
+
 .softener-card:hover .softener-image {
   animation: float 2s ease-in-out infinite;
 }
@@ -120,9 +122,7 @@
   transition: color 0.3s ease;
 }
 
-.softener-card:hover .softener-title {
-  color: #0066cc;
-}
+
 
 .arrow-container {
   display: flex;
@@ -142,19 +142,10 @@
 
 .arrow-button:hover {
   color: #0066cc;
-  animation: pulse 1s infinite;
+  
 }
 
-.arrow-button::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0066cc;
-  transition: width 0.3s ease;
-}
+
 
 .arrow-button:hover::after {
   width: 100%;

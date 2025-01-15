@@ -1,0 +1,263 @@
+.container-details {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+  }
+
+  .image-section {
+    flex: 1;
+  }
+
+  .main-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .gallery-container {
+    position: relative;
+    padding-right: 80px; /* Space for navigation */
+  }
+
+  .thumbnail-container {
+    display: flex;
+    gap: 10px;
+    max-width: calc(100% - 80px);
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .thumbnail-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .thumbnail {
+    width: 62px;
+    height: 62px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .thumbnail.active {
+    border: 2px solid #007bff;
+  }
+
+  .navigation-buttons-details {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+  }
+
+  .nav-button-details {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 0 10px;
+    color: #666;
+  }
+
+  .nav-button-details:hover {
+    color: #333;
+  }
+
+  .product-info {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .product-name {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .product-price {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .product-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .capacity-section {
+    margin-bottom: 30px;
+  }
+
+  .capacity-label {
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .capacity-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .capacity-button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .capacity-button.selected {
+    background: #f8f8f8;
+    border-color: #333;
+  }
+
+  .schedule-button {
+    background: #000;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease;
+  }
+
+  .schedule-button:hover {
+    background: #333;
+  }
+
+  .arrow-icon {
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .product-container {
+      flex-direction: column;
+    }
+
+    .product-title {
+      font-size: 24px;
+    }
+
+    .product-price {
+      font-size: 24px;
+    }
+  }
+
+
+  .product-details-section {
+    max-width: 1440px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  
+  .tabs-container {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 40px;
+  }
+  
+  .tabs-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tab-item {
+    padding: 15px 0;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    position: relative;
+  }
+  
+  .tab-item.active {
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
+  
+  .tab-content {
+    margin-top: 40px;
+  }
+  
+  .content-grid {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .features-container {
+    flex: 1;
+  }
+  
+  .image-container- {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-image-details {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .feature-row {
+    margin-bottom: 20px;
+  }
+  
+  .feature-title {
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .feature-description {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .tabs-list {
+      gap: 20px;
+    }
+  
+    .content-grid {
+      flex-direction: column;
+    }
+  
+    .section-title {
+      font-size: 24px;
+    }
+  }
+  

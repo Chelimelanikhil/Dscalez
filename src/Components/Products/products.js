@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React, { useState ,history} from 'react';
 import './products.css'
 import productsimages from '../../images/products.png'
 import WaterSofteners from '../../images/WaterSofteners.png'
@@ -10,6 +10,8 @@ import p2 from '../../images/productimage2.png'
 import p3 from '../../images/p3.png'
 import p4 from '../../images/p4.png'
 import check from '../../images/check.png'
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const CheckIcon = () => (
@@ -24,6 +26,7 @@ const Products = () => {
   const handlePlay = () => {
     setIsPlaying(true);
   };
+  const navigate = useNavigate();
 
   const softeners = [
     {
@@ -122,6 +125,10 @@ const Products = () => {
   const toggleQuestion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  const handleProduct = () => {
+    navigate('/product-details');
+  };
   return (
     <div className="water-softeners">
       <div className="header-section-products">
@@ -145,7 +152,7 @@ const Products = () => {
             </div>
             <h3 className="softener-title">{softener.title}</h3>
             <div className="arrow-container">
-              <button className="arrow-button">→</button>
+              <button onClick={handleProduct} className="arrow-button">→</button>
             </div>
           </div>
         ))}

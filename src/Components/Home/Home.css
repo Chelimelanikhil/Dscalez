@@ -87,7 +87,7 @@
   .hero-text {
     flex: 1;
     font-family: "Poppins", sans-serif;
-    margin-left: 0px;
+    margin-left: 20px;
   }
   .hero-content {
     flex-direction: column;
@@ -931,6 +931,8 @@
   color: #333;
   margin-bottom: 10px;
 }
+
+
 
 .product-arrow {
   font-size: 1.5rem;
