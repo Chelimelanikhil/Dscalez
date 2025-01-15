@@ -84,12 +84,21 @@
   .hero-section {
     padding: 40px 20px;
   }
-
+  .hero-text {
+    flex: 1;
+    font-family: "Poppins", sans-serif;
+    margin-left: 0px;
+  }
   .hero-content {
     flex-direction: column;
     text-align: center;
   }
-
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .hero-text h1 {
     font-size: 36px;
   }
