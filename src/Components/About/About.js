@@ -2,22 +2,28 @@ import React from 'react'
 import './About.css'
 import experince from '../../images/experience.png'
 import storeImage from '../../images/storeImage.png'
+import locationIcon from '../../images/Location.png'
 
 
 const StoreCard = ({ location, image }) => {
   return (
     <div className="store-card">
-      <div className="store-image-wrapper">
-        <img
-          src={image}
-          alt={`Aquapot RO Store ${location}`}
-          className="store-image"
-        />
-      </div>
-      <div className="store-location">
-        {location}
-      </div>
+    <div className="store-image-wrapper">
+      <img
+        src={image}
+        alt={`Aquapot RO Store ${location}`}
+        className="store-image"
+      />
     </div>
+    <div className="store-location">
+      <img
+        src={locationIcon}
+        alt="Location Icon"
+        className="location-icon"
+      />
+      <span className="location-name">{location}</span>
+    </div>
+  </div>
   );
 };
 export default function About() {
