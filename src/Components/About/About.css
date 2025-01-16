@@ -244,7 +244,12 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   color: white;
-  text-align: left;
+  display: flex;
+  align-items: center; /* Centers text horizontally */
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center; /* Align text center */
 }
 
 .store-overlay h3 {
