@@ -84,6 +84,9 @@ const ProductDetail = () => {
                     </button>
                 </div>
             </div>
+
+
+
             <div className="product-details-section">
                 <div className="tabs-container">
                     <ul className="tabs-list">
@@ -139,7 +142,7 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                             <div className="image-section">
-                                <img src="product-image.jpg" alt="Product" className="product-image-details" />
+                                <img src={pd} alt="Product" className="product-image-details" />
                             </div>
                         </div>
                     </div>

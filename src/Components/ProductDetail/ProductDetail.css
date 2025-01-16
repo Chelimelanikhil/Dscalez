@@ -50,7 +50,7 @@
   .navigation-buttons-details {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 30px;
     transform: translateY(-50%);
     display: flex;
     gap: 5px;
@@ -162,7 +162,7 @@
   .product-details-section {
     max-width: 1440px;
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 0 40px;
   }
   
   .tabs-container {
@@ -201,63 +201,106 @@
     background-color: #000;
   }
   
-  .tab-content {
-    margin-top: 40px;
+  .section-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 48px;
+    color: #000;
+    max-width: 600px;
+    line-height: 1.2;
   }
   
-  .content-grid {
-    display: flex;
+  .product-info-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
     gap: 40px;
   }
   
-  .features-container {
-    flex: 1;
-  }
-  
-  .image-container- {
-    flex: 1;
+  .features-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .product-image-details {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .section-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 30px;
+    flex-direction: column;
   }
   
   .feature-row {
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    padding: 24px 0;
+    border-top: 1px solid #eee;
+  }
+  
+  .feature-row:first-child {
+    border-top: 1px solid #eee;
   }
   
   .feature-title {
     font-weight: 500;
+    font-size: 18px;
     color: #000;
   }
   
   .feature-description {
-    color: #666;
+    font-size: 16px;
     line-height: 1.6;
+    color: #666;
+  }
+  
+  .image-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .product-image-details {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 1024px) {
+    .product-info-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  
+    .image-section {
+      order: -1;
+    }
   }
   
   @media (max-width: 768px) {
-    .tabs-list {
-      gap: 20px;
+    .product-details-section {
+      margin: 32px auto;
+      padding: 0 20px;
     }
   
-    .content-grid {
-      flex-direction: column;
+    .tabs-list {
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .tab-item {
+      font-size: 14px;
+      white-space: nowrap;
     }
   
     .section-title {
-      font-size: 24px;
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+  
+    .feature-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 20px 0;
+    }
+  
+    .feature-title {
+      font-size: 16px;
+    }
+  
+    .feature-description {
+      font-size: 14px;
     }
   }
-  
