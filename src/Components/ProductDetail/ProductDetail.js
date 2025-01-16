@@ -299,7 +299,7 @@ const ProductDetail = () => {
       </div>
 
       {/* Features Section */}
-      <div className="features-section">
+      <div className="features-section-details">
         {features.map((feature) => (
           <div key={feature.id} className="feature">
             <h3>{feature.id}</h3>

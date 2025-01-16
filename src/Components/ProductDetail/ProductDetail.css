@@ -488,7 +488,7 @@
 }
 
 /* Features Section */
-.features-section {
+.features-section-details {
   display: flex;
   flex-wrap: wrap; /* Enable wrapping for responsiveness */
   justify-content: space-between;
