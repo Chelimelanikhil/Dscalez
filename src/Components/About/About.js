@@ -8,22 +8,37 @@ import locationIcon from '../../images/Location.png'
 const StoreCard = ({ location, image }) => {
   return (
     <div className="store-card">
-    <div className="store-image-wrapper">
-      <img
-        src={image}
-        alt={`Aquapot RO Store ${location}`}
-        className="store-image"
-      />
+      <div className="store-image-wrapper">
+        <img
+          src={image}
+          alt={`Aquapot RO Store ${location}`}
+          className="store-image"
+        />
+        <div className="store-location">
+          <img
+            src={locationIcon}
+            alt="Location Icon"
+            className="location-icon"
+          />
+          <span className="location-name">{location}</span>
+        </div>
+      </div>
+      <div className="store-overlay">
+        <h3>KARNATAKA - {location.toUpperCase()}</h3>
+        <div className="store-details">
+          <p>BRO STORE {location.toUpperCase()}</p>
+          <p>No. 11/1(193), Chaitanya Ground Floor,</p>
+          <p>K.P. Puttanna Chetty Road,</p>
+          <p>5th Main Road Chamrajpet,</p>
+          <p>{location}, Karnataka - 560018</p>
+          <p>Tel: +91 9393936142, 9642972325</p>
+          <p>Email: <a href={`mailto:rostore${location.toLowerCase()}@gmail.com`}>
+            rostore{location.toLowerCase()}@gmail.com
+          </a></p>
+          <p>Toll free: 1800-425-3648</p>
+        </div>
+      </div>
     </div>
-    <div className="store-location">
-      <img
-        src={locationIcon}
-        alt="Location Icon"
-        className="location-icon"
-      />
-      <span className="location-name">{location}</span>
-    </div>
-  </div>
   );
 };
 export default function About() {
@@ -83,12 +98,7 @@ export default function About() {
         </div>
       </div>
 
-
-
     </div>
-
-
-
 
   )
 }
