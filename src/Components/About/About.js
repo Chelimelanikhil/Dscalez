@@ -59,11 +59,11 @@ export default function About() {
       <div className="vision-mission-container">
         <div className="vision-box">
           <h3>Our Vision</h3>
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <p>To bring comfort and wellness into every home by providing smarter water solutions that improve water quality and enhance everyday living.</p>
         </div>
         <div className="mission-box">
           <h3>Our Mission</h3>
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <p>We strive to solve water-related challenges with reliable, easy-to-use products that soften water, protect appliances, and improve health and hygiene for families everywhere.</p>
         </div>
       </div>
 

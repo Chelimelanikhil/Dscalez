@@ -1,8 +1,8 @@
 /* WaterSofteners.css */
 .water-softeners {
   padding-top: 20px;
-  width: 100%;
-  max-width: 100%;
+
+  max-width: 100vw;
   margin: 0 auto;
   background-color: #f8f8f8;
 }
@@ -71,7 +71,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   padding: 16px;
-  max-width: 1440px;
+  max-width: 100vw;
   margin: 0 auto;
 }
 
@@ -91,8 +91,6 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
 }
-
-
 
 .softener-card:hover .softener-image {
   animation: float 2s ease-in-out infinite;
@@ -122,8 +120,6 @@
   transition: color 0.3s ease;
 }
 
-
-
 .arrow-container {
   display: flex;
   justify-content: flex-end;
@@ -142,10 +138,7 @@
 
 .arrow-button:hover {
   color: #0066cc;
-  
 }
-
-
 
 .arrow-button:hover::after {
   width: 100%;
@@ -169,12 +162,12 @@
   background-color: #fff;
   padding: 40px 20px;
   margin: 40px auto;
-  max-width: 1440px;
+  max-width: 100vw;
   text-align: center;
 }
 
 .alternatives-content {
-  max-width: 800px;
+  max-width: 100vw;
   margin: 0 auto;
 }
 
@@ -225,7 +218,7 @@
   }
 }
 .comparison-container {
-  max-width: 1440px;
+  max-width: 100vw;
   margin: 40px auto;
   padding: 40px 20px;
   width: 100%;
@@ -586,9 +579,9 @@
 }
 
 .faq-container {
-  max-width: 1440px;
+  max-width: 100vw;
   margin: 0 auto;
-  padding: 80px 60px;
+  padding: 60px;
   background-color: white;
 }
 
@@ -610,7 +603,6 @@
   background-color: white;
   border: none;
 }
-
 
 .faq-question {
   width: 100%;

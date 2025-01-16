@@ -51,27 +51,27 @@ export default function Home() {
     Rust: {
       description: "Causes staining and metallic taste",
       removal_rate: "99.9%",
-      impact: "Can damage appliances and clothing"
+      impact: "Rust forms when iron pipes get old and start to corrode, causing reddish stains in water and on surfaces. Our system filters out these particles to keep your water clear and stain-free."
     },
     Sediment: {
       description: "Physical particles in water",
       removal_rate: "99.8%",
-      impact: "Creates cloudy appearance and clogs filters"
+      impact: "Sediment is made up of dirt, sand, and other tiny particles that can get into your water from the ground or old pipes. Our filters remove sediment, making your water clean and safe to use."
     },
     Chlorine: {
       description: "Common water treatment chemical",
       removal_rate: "99.9%",
-      impact: "Affects taste and smell of water"
+      impact: "Chlorine is added to tap water to kill bacteria, but it can make your water taste and smell bad. Our system reduces chlorine levels, giving you fresh, better-tasting water."
     },
     "Heavy Metal": {
       description: "Including lead and mercury",
       removal_rate: "99.7%",
-      impact: "Potential health hazard if untreated"
+      impact: "Heavy metals like lead and mercury can get into your water from old pipes or pollution. Our filtration system removes these harmful metals, making your water safer for you and your family."
     },
     Arsenic: {
       description: "Naturally occurring contaminant",
       removal_rate: "99.6%",
-      impact: "Serious health concerns if present"
+      impact: "Arsenic is a natural chemical found in groundwater that can be harmful if consumed over time. Our filters reduce arsenic levels, ensuring your water is safe and healthy to drink."
     }
   };
 
@@ -130,17 +130,17 @@ export default function Home() {
     {
       title: "5+",
       subtitle: "years of expertise",
-      description: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's.",
+      description: "With over 5 years of experience, we’ve perfected the art of delivering high-quality water solutions that customers trust and rely on. .",
     },
     {
       title: "70K+",
       subtitle: "Trusted by Customers",
-      description: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's.",
+      description: "Our extensive experience in the water treatment industry ensures that we provide only the best solutions, backed by years of knowledge and innovation..",
     },
     {
       title: "12 Months",
       subtitle: "Products Warranty",
-      description: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's.",
+      description: "We stand behind the quality of our products with a full 12-month warranty, giving you peace of mind that your investment is protected..",
     },
   ];
 
@@ -234,13 +234,12 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-text">
             <div className="star-icon">✧</div>
-            <h1>Soft Water That's Better for you and Your Home</h1>
+            <h1>Your Partner in Every Perfect Drop</h1>
             <p>
-              Water you can trust, people you can count on — from your free consultation
-              through installation and maintenance, we are here for you every step of the way
+            From your first call to lasting care, we’re here to bring better water into your life.
             </p>
             <button className="consultation-btn">
-              Schedule Free Water Consultation →
+            Transform Your Water - Book a Free Session →
             </button>
           </div>
           <div className="hero-image">
@@ -272,15 +271,11 @@ export default function Home() {
               />
               {hoveredIndex === index && (
                 <div className="irritant-overlay">
-                  <h3>{irritant.name}</h3>
-                  <p>{irritantDetails[irritant.name].description}</p>
-                  <p className="removal-rate">
-                    Removal Rate: {irritantDetails[irritant.name].removal_rate}
-                  </p>
+                 
                   <p className="impact">
                     {irritantDetails[irritant.name].impact}
                   </p>
-                  <button className="see-more-btn">See More</button>
+                  <button className="Know-more-btn">Know More</button>
                 </div>
               )}
               <p className="irritant-name">{irritant.name}</p>
@@ -354,20 +349,27 @@ export default function Home() {
 
 
       <div className="water-softening-section">
-        <h2 className="section-title">Water Softening and Filtration Solutions</h2>
-        <div className="products-container">
-          {products.map((product) => (
-            <div className="product-card" key={product.id}>
-              <img src={product.image} alt={product.title} className="product-image" />
-              <h3 className="product-title">{product.title}</h3>
-              <Link to={`/products`} className="product-arrow"
-              onClick={handleMenuClick} >
-              →
-            </Link>
-            </div>
-          ))}
-        </div>
+  <h2 className="section-title">Water Softening and Filtration Solutions</h2>
+  <div className="products-container">
+    {products.map((product) => (
+      <div className="product-card" key={product.id}>
+        <img src={product.image} alt={product.title} className="product-image" />
+        <h3 className="product-title">{product.title}</h3>
+        <Link
+          to={`/products`}
+          className="product-arrow"
+          onClick={handleMenuClick}
+        >
+          →
+        </Link>
       </div>
+    ))}
+    <button className="see-more-btn">
+  See More <span>→</span>
+</button>
+
+  </div>
+</div>
 
 
 

@@ -1,31 +1,58 @@
 import React, { useEffect } from 'react';
 import './Benefits.css';
+import b1 from '../../images/b1.png'
+import b2 from '../../images/b2.png'
+import b3 from '../../images/b3.png'
+import b4 from '../../images/b4.png'
+import b5 from '../../images/b5.png'
+import b6 from '../../images/b6.png'
+import b7 from '../../images/b7.png'
+
+
 
 const Benefits = () => {
   const benefitsData = [
     {
-      title: "Now Get 24X7 Protection From Hard & Impure Water",
-      description: "Lorem ipsum dolor sit amet consectetur. Adipiscing commodo molestie etinterdum cum dolor. Lorem ipsum sit lorem massa sed et dolor fusce tincidunt tempus et",
-      image: "https://iso.500px.com/wp-content/uploads/2016/11/stock-photo-159533631-1500x1000.jpg",
+      title: "Hair That Shines, Every Time",
+      description: "Hard water leaves your hair dull, dry, and lifeless. Switch to soft water to prevent frizz, reduce breakage, and keep your locks smooth, shiny, and manageable after every wash.",
+      image: b1,
       imagePosition: "right"
     },
     {
-      title: "Now Get 24X7 Protection From Hard & Impure Water",
-      description: "Lorem ipsum dolor sit amet consectetur. Adipiscing commodo molestie etinterdum cum dolor. Lorem ipsum sit lorem massa sed et dolor fusce tincidunt tempus et",
-      image: "https://iso.500px.com/wp-content/uploads/2016/11/stock-photo-159533631-1500x1000.jpg",
+      title: "Skin So Soft, You’ll Feel the Difference",
+      description: "Hard water can dry out your skin and cause irritation. Soft water helps lock in moisture, leaving your skin feeling softer, smoother, and refreshed after every shower.",
+      image: b2,
       imagePosition: "left"
     },
     {
-      title: "Now Get 24X7 Protection From Hard & Impure Water",
-      description: "Lorem ipsum dolor sit amet consectetur. Adipiscing commodo molestie etinterdum cum dolor. Lorem ipsum sit lorem massa sed et dolor fusce tincidunt tempus et",
-      image: "https://iso.500px.com/wp-content/uploads/2016/11/stock-photo-159533631-1500x1000.jpg",
+      title: "Clothes That Stay Bright, Wash After Wash",
+      description: "Say goodbye to faded, rough clothes! Soft water keeps your fabrics vibrant, soft, and long-lasting by preventing mineral deposits from hard water.",
+      image: b3,
       imagePosition: "right"
     },
     {
-      title: "Now Get 24X7 Protection From Hard & Impure Water",
-      description: "Lorem ipsum dolor sit amet consectetur. Adipiscing commodo molestie etinterdum cum dolor. Lorem ipsum sit lorem massa sed et dolor fusce tincidunt tempus et",
-      image: "https://iso.500px.com/wp-content/uploads/2016/11/stock-photo-159533631-1500x1000.jpg",
+      title: "Appliances That Last Longer",
+      description: "Protect your washing machine, dishwasher, and water heater from scale buildup. Soft water helps your appliances work efficiently and last longer, saving you money on repairs.",
+      image: b4,
       imagePosition: "left"
+    },
+    {
+      title: "Say Goodbye to White Stains",
+      description: "No more white marks on taps, tubs, and sinks! Our system reduces hard water residue, keeping your bathroom clean and shining.",
+      image: b5,
+      imagePosition: "right"
+    },
+    {
+      title: "Fresh Water, No More Smell",
+      description: "Tired of water with a bad smell or colour? This is because heavy water often carries minerals and impurities. Our solution removes impurities, delivering fresh, clear, and odor-free water for your home.",
+      image: b6,
+      imagePosition: "left"
+    },
+    {
+      title: "Keep Your Pipes Healthy",
+      description: "Hard water buildup can damage pipes and reduce water flow also cause blockages. Our system prevents scaling and bacteria, extending pipe lifespan and maintaining steady pressure.",
+      image: b7,
+      imagePosition: "right"
     }
   ];
   useEffect(() => {
