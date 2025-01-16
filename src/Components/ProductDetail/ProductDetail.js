@@ -116,25 +116,25 @@ const ProductDetail = () => {
                         <h2 className="section-title">The Saltless Solution for Better Water</h2>
                         <div className="product-info-grid">
                             <div className="features-section">
-                                <div className="feature-row">
+                                <div className="feature-row-details">
                                     <div className="feature-title">Selective Filtering</div>
                                     <div className="feature-description">
                                         Minerals remain in your water, but the system reduces the damage their buildup can cause.
                                     </div>
                                 </div>
-                                <div className="feature-row">
+                                <div className="feature-row-details">
                                     <div className="feature-title">Flexible Configuration</div>
                                     <div className="feature-description">
                                         With a variety of sizes available, the saltless water system can fit in your laundry room, basement, garage or outside.
                                     </div>
                                 </div>
-                                <div className="feature-row">
+                                <div className="feature-row-details">
                                     <div className="feature-title">Simple Maintenance</div>
                                     <div className="feature-description">
                                         Since the system doesn't use electricity or salt, it's easy to maintain and doesn't require salt purchases.
                                     </div>
                                 </div>
-                                <div className="feature-row">
+                                <div className="feature-row-details">
                                     <div className="feature-title">Specialized Conditioning</div>
                                     <div className="feature-description">
                                         The salt-free water softener alternative is a great way to condition water and reduce scaling in homes that can't use salt.
