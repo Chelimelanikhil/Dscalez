@@ -370,7 +370,14 @@
   .comparison-content {
     grid-template-columns: 50% 25% 25%;
   }
-  
+  .check-mark {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px;
+  }
   .column {
     padding: 10px;
   }
@@ -386,9 +393,9 @@
   .feature-name {
     font-size: 12px;
   }
-  
+ 
   .feature-name::after {
-    width: 90%;
+    width: 50%;
   }
 }
 
