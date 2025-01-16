@@ -81,7 +81,7 @@ const Gallery = () => {
           <iframe
             width="100%"  // Set to 100% for responsive sizing
             height="600"  // Increase height for a larger video
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your YouTube video URL
+            src="https://www.youtube.com/embed/5p1Y6Z1unI8" // Replace with your YouTube video URL
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

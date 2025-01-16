@@ -21,8 +21,7 @@ const CheckIcon = () => (
 const Products = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoId = "dQw4w9WgXcQ"; // Replace with your YouTube video ID
-
+  const videoId = "5p1Y6Z1unI8";
   const handlePlay = () => {
     setIsPlaying(true);
   };
@@ -137,26 +136,28 @@ const Products = () => {
 
 
       <div className="softener-grid">
-        {softeners.map((softener, index) => (
-          <div
-            key={softener.id}
-            className="softener-card"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            <div className="softener-image-container">
-              <img
-                src={softener.image}
-                alt={softener.title}
-                className="softener-image"
-              />
-            </div>
-            <h3 className="softener-title">{softener.title}</h3>
-            <div className="arrow-container">
-              <button onClick={handleProduct} className="arrow-button">→</button>
-            </div>
-          </div>
-        ))}
+  {softeners.map((softener, index) => (
+    <div
+      key={softener.id}
+      className="softener-card"
+      style={{ animationDelay: `${index * 0.1}s` }}
+      onClick={() => handleProduct(softener.id)} // Add the click handler here
+    >
+      <div className="softener-image-container">
+        <img
+          src={softener.image}
+          alt={softener.title}
+          className="softener-image"
+        />
       </div>
+      <h3 className="softener-title">{softener.title}</h3>
+      <div className="arrow-container">
+        <button className="arrow-button">→</button>
+      </div>
+    </div>
+  ))}
+</div>
+
 
 
       <div className="alternatives-section">
