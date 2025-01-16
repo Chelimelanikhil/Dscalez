@@ -409,7 +409,7 @@ padding: 20px;
 .timeline {
   flex: 1;
   max-width: 700px; /* Increased width */
-  min-width: 400px; /* Prevents shrinking too much */
+  min-width: 300px; /* Prevents shrinking too much */
 }
 
 .illustration {

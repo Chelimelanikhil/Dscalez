@@ -176,11 +176,8 @@ const Products = () => {
 
       <div className="comparison-container">
         <h1 className="comparison-title">Compare Water Softening Systems</h1>
-
         <div className="comparison-content">
-
           <div className="empty-space"></div>
-
           {/* Header section */}
           <div className='header1'>
             <div className="column water-softeners">
@@ -282,6 +279,9 @@ const Products = () => {
           </button>
         </div>
       </div>
+
+
+
 
       <div className="faq-container">
       <h1>Frequently Asked Questions</h1>

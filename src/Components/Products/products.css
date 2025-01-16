@@ -391,6 +391,9 @@
     width: 90%;
   }
 }
+
+
+
 .testimonial-container {
   display: flex;
   gap: 48px;
@@ -405,6 +408,7 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+  width: 100%;
 }
 
 .video-wrapper {
@@ -520,52 +524,60 @@
     flex-direction: column;
     padding: 24px;
     gap: 24px;
+    min-height: auto;
+  }
+
+  .video-container {
+    flex: none;
+    width: 100%;
+  }
+
+  .video-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+  }
+
+  .video-placeholder, 
+  .video-overlay,
+  .youtube-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .play-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .content-container {
+    flex: none;
+    width: 100%;
   }
 
   .content-container h2 {
     font-size: 28px;
   }
-  .benefits-section::after {
-    content: "";
-    position: absolute;
-    top: 67px; /* Adjust this value to align with the bold line */
-    width: 80%;
-    border-bottom: 1px solid #e0e0e0; /* Lighter line */
-    margin-left: 0px;
-  }
+
   .content-container p {
     font-size: 16px;
   }
-}
-/* Text Section (1/4 Area) */
-.text-section {
-  flex: 1; /* Occupies 1/4 of the area */
+
+  .play-video-link {
+    font-size: 14px;
+  }
 }
 
-.heading {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.quote {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.link {
-  font-size: 16px;
-  font-weight: bold;
-  color: #007bff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-.arrow {
-  margin-left: 5px;
-  font-size: 18px;
+/* Additional styles to ensure video visibility */
+@supports not (aspect-ratio: 16/9) {
+  /* Fallback for browsers that don't support aspect-ratio */
+  .video-wrapper {
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  }
 }
 
 .faq-container {
