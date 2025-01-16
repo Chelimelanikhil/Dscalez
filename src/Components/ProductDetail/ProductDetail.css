@@ -1,6 +1,6 @@
 /* Base container styles */
 .container-details {
-  max-width: 1200px;
+  max-width: 100vw;
   margin: 40px auto;
   padding: 0 20px;
   display: flex;
@@ -348,5 +348,65 @@
 
   .feature-description {
       font-size: 14px;
+  }
+}
+
+/* Additional styles for Specifications tab */
+.specs-grid {
+  max-width: 800px;
+}
+
+.specs-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Additional styles for Installation tab */
+.installation-content {
+  max-width: 800px;
+}
+
+.requirements-list,
+.support-list {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.requirements-list li,
+.support-list li {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.maintenance-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.maintenance-schedule p {
+  margin: 0;
+}
+
+.maintenance-schedule strong {
+  color: #333;
+}
+
+/* Responsive adjustments for new content */
+@media (max-width: 768px) {
+  .requirements-list,
+  .support-list {
+      margin-left: 16px;
+  }
+
+  .requirements-list li,
+  .support-list li {
+      font-size: 14px;
+      margin-bottom: 6px;
+  }
+
+  .maintenance-schedule {
+      gap: 8px;
   }
 }

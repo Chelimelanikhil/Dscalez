@@ -85,8 +85,6 @@ const ProductDetail = () => {
                 </div>
             </div>
 
-
-
             <div className="product-details-section">
                 <div className="tabs-container">
                     <ul className="tabs-list">
@@ -147,9 +145,102 @@ const ProductDetail = () => {
                         </div>
                     </div>
                 )}
+
+                {activeTab === 'specs' && (
+                    <div className="tab-content">
+                        <h2 className="section-title">Technical Specifications</h2>
+                        <div className="specs-grid">
+                            <div className="specs-section">
+                                <div className="feature-row-details">
+                                    <div className="feature-title">Dimensions</div>
+                                    <div className="feature-description">
+                                        Height: 54" (137 cm)<br />
+                                        Width: 10" (25 cm)<br />
+                                        Depth: 10" (25 cm)
+                                    </div>
+                                </div>
+                                <div className="feature-row-details">
+                                    <div className="feature-title">Flow Rate</div>
+                                    <div className="feature-description">
+                                        Maximum: 12 GPM (gallons per minute)<br />
+                                        Recommended: 8-10 GPM for optimal performance
+                                    </div>
+                                </div>
+                                <div className="feature-row-details">
+                                    <div className="feature-title">Operating Parameters</div>
+                                    <div className="feature-description">
+                                        Temperature Range: 36°F - 120°F (2°C - 49°C)<br />
+                                        Pressure Range: 25-80 psi<br />
+                                        pH Range: 6.5-8.5
+                                    </div>
+                                </div>
+                                <div className="feature-row-details">
+                                    <div className="feature-title">Connection Size</div>
+                                    <div className="feature-description">
+                                        Inlet/Outlet: 1" NPT<br />
+                                        Bypass Valve: Included<br />
+                                        Housing Material: High-grade polymer
+                                    </div>
+                                </div>
+                                <div className="feature-row-details">
+                                    <div className="feature-title">Media Specifications</div>
+                                    <div className="feature-description">
+                                        Media Type: Template Assisted Crystallization (TAC)<br />
+                                        Media Life: 5-7 years<br />
+                                        Capacity: Variable based on water usage and hardness
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === 'installation' && (
+                    <div className="tab-content">
+                        <h2 className="section-title">Installation & Maintenance Guide</h2>
+                        <div className="installation-content">
+                            <div className="feature-row-details">
+                                <div className="feature-title">Installation Requirements</div>
+                                <div className="feature-description">
+                                    <ul className="requirements-list">
+                                        <li>Level surface capable of supporting system when filled with water</li>
+                                        <li>Access to main water line</li>
+                                        <li>Adequate space for maintenance and service</li>
+                                        <li>Protection from freezing temperatures</li>
+                                        <li>Nearby drain for system flushing (if needed)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div className="feature-row-details">
+                                <div className="feature-title">Maintenance Schedule</div>
+                                <div className="feature-description">
+                                    <div className="maintenance-schedule">
+                                        <p><strong>Monthly:</strong> Visual inspection for leaks and proper operation</p>
+                                        <p><strong>Quarterly:</strong> Check water pressure and flow rate</p>
+                                        <p><strong>Annually:</strong> Professional system inspection and cleaning</p>
+                                        <p><strong>Every 5-7 Years:</strong> Media replacement (depending on water quality and usage)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="feature-row-details">
+                                <div className="feature-title">Professional Support</div>
+                                <div className="feature-description">
+                                    <p>Our network of certified installers provides:</p>
+                                    <ul className="support-list">
+                                        <li>Professional installation</li>
+                                        <li>Regular maintenance services</li>
+                                        <li>24/7 emergency support</li>
+                                        <li>System optimization</li>
+                                        <li>Water quality testing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
-
-
         </>
     );
 };
