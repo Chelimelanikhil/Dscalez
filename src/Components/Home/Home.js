@@ -278,7 +278,7 @@ export default function Home() {
               />
               {hoveredIndex === index && (
                 <div className="irritant-overlay">
-
+                  <h3>{irritant.name}</h3>
                   <p className="impact">
                     {irritantDetails[irritant.name].impact}
                   </p>
@@ -356,7 +356,9 @@ export default function Home() {
 
 
       <div className="water-softening-section">
-        <h2 className="section-title">Water Softening and Filtration Solutions</h2>
+        <div className='heading'>
+          <h2 className="section-title">Water Softening and Filtration Solutions</h2>
+        </div>
         <div className="products-container">
           {products.map((product) => (
             <div className="product-card" key={product.id}>

@@ -39,11 +39,11 @@ const Footer = () => {
           <div className="contact-details">
             <div className="phone-number">
               <img src={phone} alt="Phone" className="icons" />
-              <span>+91 7095221035</span>
+              <span>1800-425-3648</span>
             </div>
             <div className="email">
               <img src={mail} alt="Email" className="icons" />
-              <span>dscalez@dummyemail.com</span>
+              <span>dscalez@email.com</span>
             </div>
             <div className="social-links">
               <a href="#" className="social-icon">
@@ -72,7 +72,7 @@ const Footer = () => {
           ></iframe>
           <div className="address">
             <img src={Location} alt="Location" className="icons" />
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply.</p>
+            <p>#5-2-291/1, Opp:Mahaveer Complex, Hyderabad, Secunderabad - 500003</p>
           </div>
         </div>
       </div>
