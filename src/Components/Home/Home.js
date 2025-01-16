@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import './Home.css'
 import productimage from '../../images/product.png'
 import machine from '../../images/Rectangle.png'
@@ -23,6 +23,8 @@ import p4 from '../../images/p4.png'
 
 export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const navigate = useNavigate();
+
   const irritants = [
     {
       name: 'Rust',
@@ -109,20 +111,20 @@ export default function Home() {
 
   const steps = [
     {
-      title: 'Lorem Ipsum',
-      description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum'
+      title: 'Water Intake',
+      description: 'Water from your source (tap, well, etc.) is filtered and then softened, providing clean and pure drinking water.'
     },
     {
-      title: 'Lorem Ipsum',
-      description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum'
+      title: 'Softening the Water',
+      description: 'The system removes the minerals that make water hard (like calcium and magnesium), turning it into soft water.'
     },
     {
-      title: 'Lorem Ipsum',
-      description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum'
+      title: 'For Salt-Free Systems',
+      description: 'Instead of removing minerals, the system changes them into tiny crystals. These crystals don’t stick to your pipes, so you won’t get build-up.'
     },
     {
-      title: 'Lorem Ipsum',
-      description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum'
+      title: 'Clean, Soft Water',
+      description: 'After the process, Enjoy soft, pure water throughout your home or business, protecting your skin, appliances, and plumbing.'
     }
   ];
 
@@ -225,7 +227,12 @@ export default function Home() {
   };
   const handleMenuClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+
+  };
+
+  const handleProducts = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate('/products');
   };
 
   return (
@@ -236,10 +243,10 @@ export default function Home() {
             <div className="star-icon">✧</div>
             <h1>Your Partner in Every Perfect Drop</h1>
             <p>
-            From your first call to lasting care, we’re here to bring better water into your life.
+              From your first call to lasting care, we’re here to bring better water into your life.
             </p>
             <button className="consultation-btn">
-            Transform Your Water - Book a Free Session →
+              Transform Your Water - Book a Free Session →
             </button>
           </div>
           <div className="hero-image">
@@ -271,7 +278,7 @@ export default function Home() {
               />
               {hoveredIndex === index && (
                 <div className="irritant-overlay">
-                 
+
                   <p className="impact">
                     {irritantDetails[irritant.name].impact}
                   </p>
@@ -349,27 +356,27 @@ export default function Home() {
 
 
       <div className="water-softening-section">
-  <h2 className="section-title">Water Softening and Filtration Solutions</h2>
-  <div className="products-container">
-    {products.map((product) => (
-      <div className="product-card" key={product.id}>
-        <img src={product.image} alt={product.title} className="product-image" />
-        <h3 className="product-title">{product.title}</h3>
-        <Link
-          to={`/products`}
-          className="product-arrow"
-          onClick={handleMenuClick}
-        >
-          →
-        </Link>
-      </div>
-    ))}
-    <button className="see-more-btn">
-  See More <span>→</span>
-</button>
+        <h2 className="section-title">Water Softening and Filtration Solutions</h2>
+        <div className="products-container">
+          {products.map((product) => (
+            <div className="product-card" key={product.id}>
+              <img src={product.image} alt={product.title} className="product-image" />
+              <h3 className="product-title">{product.title}</h3>
+              <Link
+                to={`/products`}
+                className="product-arrow"
+                onClick={handleMenuClick}
+              >
+                →
+              </Link>
+            </div>
+          ))}
+          <button onClick={handleProducts} className="see-more-btn">
+            See More <span>→</span>
+          </button>
 
-  </div>
-</div>
+        </div>
+      </div>
 
 
 

@@ -382,13 +382,14 @@ padding: 20px;
   }
 }
 
-.section {
-  padding: 80px;
 
+.section {
+  max-width: 100vw;
+  padding: 20px;
   margin: 0 auto;
 }
 
-.heading {
+.section .heading {
   text-align: center;
   font-size: 36px;
   font-weight: bold;
@@ -400,14 +401,29 @@ padding: 20px;
   display: flex;
   gap: 40px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Centers items horizontally */
+ 
+  margin: 0 auto; /* Centers the container on the screen */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
 }
-
 .timeline {
   flex: 1;
-  max-width: 500px;
+  max-width: 700px; /* Increased width */
+  min-width: 400px; /* Prevents shrinking too much */
 }
 
+.illustration {
+  flex: 1;
+  max-width: 550px; /* Increased width */
+  min-width: 300px; /* Prevents shrinking too much */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+}
 .timeline__item {
   display: flex;
   gap: 15px;
@@ -429,8 +445,8 @@ padding: 20px;
 .timeline__connector::before {
   content: "";
   position: absolute;
-  top: 15px;
-  bottom: -45px;
+  top: 25px;
+  bottom: -65px;
   width: 1px;
   background-color: #e0e0e0;
   left: 50%;
@@ -439,23 +455,6 @@ padding: 20px;
 
 .timeline__item:last-child .timeline__connector::before {
   display: none;
-}
-
-.timeline__dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #000;
-  margin-top: 8px;
-}
-
-.timeline__content {
-  background-color: #fff;
-  padding: 14px;
-  border-radius: 12px;
-  /* Enhanced layered shadow for depth */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 8px 15px rgba(0, 0, 0, 0.1),
-    0 15px 30px rgba(0, 0, 0, 0.08);
 }
 
 .timeline__number {
@@ -469,29 +468,14 @@ padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5px; /* Add some space between the number and the line */
 }
 
-.timeline__connector {
-  position: relative;
-  width: 25px; /* Adjust width to fit the number */
-  display: flex;
-  justify-content: center;
-}
-
-.timeline__connector::before {
-  content: "";
-  position: absolute;
-  top: 25px; /* Start the line below the number */
-  bottom: -45px;
-  width: 1px;
-  background-color: #e0e0e0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.timeline__item:last-child .timeline__connector::before {
-  display: none;
+.timeline__content {
+  background-color: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 8px 15px rgba(0, 0, 0, 0.1),
+    0 15px 30px rgba(0, 0, 0, 0.08);
 }
 
 .timeline__title {
@@ -508,17 +492,6 @@ padding: 20px;
   color: #666;
 }
 
-.illustration {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-}
-
 .illustration__image {
   width: 100%;
   height: auto;
@@ -526,20 +499,25 @@ padding: 20px;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    gap: 20px; /* Reduces gap for medium screens */
+  }
+}
+
 @media (max-width: 968px) {
   .container {
     flex-direction: column;
+    align-items: center;
   }
 
   .timeline {
-    width: 100%;
     max-width: 100%;
   }
 
   .illustration {
-    width: 100%;
     max-width: 100%;
-    order: -1;
+    order: -1; /* Moves illustration above timeline */
   }
 
   .heading {
@@ -550,10 +528,9 @@ padding: 20px;
   .timeline__content {
     padding: 12px 15px;
   }
-  .section {
-    padding: 10px 40px;
 
-    margin: 0 auto;
+  .section {
+    padding: 10px 20px;
   }
 }
 
@@ -565,7 +542,13 @@ padding: 20px;
   .timeline__description {
     font-size: 13px;
   }
+
+  .container {
+    gap: 15px; /* Further reduces the gap for small screens */
+  }
 }
+
+
 
 /* ReasonSection.css */
 .reason-section {
@@ -917,7 +900,7 @@ padding: 20px;
 
 .product-card {
   flex: 0 0 auto; /* Prevent shrinking and ensure cards stay in line */
-  width: 250px;
+  width: 280px;
   padding: 20px;
   border: 1px solid #000;
   border-radius: 10px;
