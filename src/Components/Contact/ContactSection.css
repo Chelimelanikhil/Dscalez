@@ -180,14 +180,14 @@ textarea {
 }
 
 .social-icons img {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   transition: transform 0.3s ease;
 }
 
 .social-icons .insta {
-  height: 21px;
-  width: 21px;
+  height: 25px;
+  width: 25px;
 }
 
 /* Map Container */
