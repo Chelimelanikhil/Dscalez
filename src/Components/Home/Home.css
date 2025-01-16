@@ -513,6 +513,7 @@ padding: 20px;
 
   .timeline {
     max-width: 100%;
+    padding-top: 20px;
   }
 
   .illustration {

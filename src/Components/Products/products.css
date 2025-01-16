@@ -217,8 +217,9 @@
     font-size: 15px;
   }
 }
+
 .comparison-container {
-  max-width: 100vw;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 40px 20px;
   width: 100%;
@@ -240,50 +241,34 @@
 
 .header1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 2 / span 2;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .column {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   width: 100%;
-  margin-bottom: -40px;
-  margin-left: 105px;
+  margin: 0;
 }
+
 .column.water-softeners {
-  margin-right: 20px;
-  text-align: start;
-}
-.column.water-softeners p {
-  text-align: start;
+  margin: 0;
+  text-align: center;
+  background-color: transparent;
 }
 
 .column.salt-free {
   background-color: #eaeaea;
-  padding: 10px 65px;
-}
-
-@media (max-width: 768px) {
-  .column {
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    margin-bottom: -40px;
-    margin-left: 2px;
-  }
-
-  .column.salt-free {
-    background-color: #eaeaea;
-    padding: 10px 19px;
-  }
-  .column p {
-    font-size: 10px;
-  }
+  padding: 20px;
 }
 
 .system-image {
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .system-image img {
@@ -305,10 +290,10 @@
   grid-template-columns: 40% 30% 30%;
   width: 100%;
   position: relative;
-  padding: 20px;
+  padding: 0;
+  margin-top: 40px;
 }
 
-/* Modified benefits label styling */
 .benefits-label {
   grid-column: 1;
   font-weight: 600;
@@ -316,26 +301,8 @@
   padding: 15px 0;
   position: relative;
   margin-bottom: 20px;
-}
-
-/* Bold line under Benefits label */
-.benefits-label::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 20%; /* Width of the label */
-  border-bottom: 2px solid #000; /* Bold line */
-}
-
-/* Lighter line spanning full width */
-.benefits-section::after {
-  content: "";
-  position: absolute;
-  top: 67px; /* Adjust this value to align with the bold line */
-  width: 80%;
-  border-bottom: 1px solid #e0e0e0; /* Lighter line */
-  margin-left: 105px;
+  border-bottom: 2px solid #000;
+  width: fit-content;
 }
 
 .feature-row {
@@ -345,15 +312,7 @@
   align-items: center;
   position: relative;
   width: 100%;
-}
-
-.feature-row::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40%;
-  border-bottom: 1px solid #e0e0e0;
+  margin: 0;
 }
 
 .feature-name {
@@ -362,6 +321,16 @@
   color: #333;
   line-height: 1.4;
   padding: 15px 20px 15px 0;
+  position: relative;
+}
+
+.feature-name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .check-columns {
@@ -397,9 +366,30 @@
   fill: #333;
 }
 
-.empty-space {
-  grid-column: 1;
-  height: 100%;
+@media (max-width: 768px) {
+  .comparison-content {
+    grid-template-columns: 50% 25% 25%;
+  }
+  
+  .column {
+    padding: 10px;
+  }
+  
+  .column.salt-free {
+    padding: 10px;
+  }
+  
+  .system-name {
+    font-size: 14px;
+  }
+  
+  .feature-name {
+    font-size: 12px;
+  }
+  
+  .feature-name::after {
+    width: 90%;
+  }
 }
 .testimonial-container {
   display: flex;
