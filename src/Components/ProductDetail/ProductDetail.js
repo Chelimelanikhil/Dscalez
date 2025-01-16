@@ -3,6 +3,7 @@ import './ProductDetail.css';
 import main from '../../images/main.png';
 import daigram from '../../images/diagram.png';
 import pd from '../../images/pd.png'
+import baby from '../../images/baby_taking_a_bath.png.png'
 
 const ProductDetail = () => {
     const [selectedCapacity, setSelectedCapacity] = useState('1350');
@@ -17,6 +18,33 @@ const ProductDetail = () => {
     ];
 
     const capacityOptions = ['1350', '1450', '1550', '1650'];
+
+    const features = [
+        {
+          id: "01",
+          title: "Home Improvement",
+          description:
+            "Enjoy cleaner dishes, brighter laundry, and reduced buildup on shower heads, faucets and shower doors.",
+        },
+        {
+          id: "02",
+          title: "Decreased Repair Costs",
+          description:
+            "Spend less on repairing and replacing water-using appliances, including dishwashers and washing machines.",
+        },
+        {
+          id: "03",
+          title: "Water Conservation",
+          description:
+            "The salt-free water system limits the impact of hard water minerals rather than removing them, which results in zero-waste water treatment.",
+        },
+        {
+          id: "04",
+          title: "Time Efficiency",
+          description:
+            "With longer-lasting appliances and less scale buildup, save time on maintenance and cleaning.",
+        },
+      ];
 
     return (
         <>
@@ -241,6 +269,49 @@ const ProductDetail = () => {
                     </div>
                 )}
             </div>
+            <div className="details-container">
+    
+            <div className="details-container">
+      {/* Consultation Section */}
+      <div className="consultation-section">
+        <h1>Ready to Take the Next Step?</h1>
+        <p>
+          Schedule a free, in-home consultation and water test to get one step
+          closer to the better water your family deserves. With options to buy,
+          finance or rent, your local Culligan water expert will make
+          recommendations based on your home, water usage, test results, and any
+          other concerns.
+        </p>
+        <button className="consultation-btn">Schedule Free Water Consultation</button>
+      </div>
+
+      {/* Image Section */}
+      <div className="bottom-image-section">
+        <div className="text-content">
+          <h2>More Reasons to Choose a Culligan Saltless Water System</h2>
+        </div>
+        <div className="image-content">
+          <img
+            src={baby}
+            alt="Mother and child enjoying bath"
+          />
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="features-section">
+        {features.map((feature) => (
+          <div key={feature.id} className="feature">
+            <h3>{feature.id}</h3>
+            <h4>{feature.title}</h4>
+            <p>{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    </div>
+
+
         </>
     );
 };
