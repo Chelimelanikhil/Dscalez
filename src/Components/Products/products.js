@@ -1,6 +1,6 @@
 
 
-import React, { useState ,history} from 'react';
+import React, { useState, history } from 'react';
 import './products.css'
 import productsimages from '../../images/products.png'
 import WaterSofteners from '../../images/WaterSofteners.png'
@@ -136,27 +136,27 @@ const Products = () => {
 
 
       <div className="softener-grid">
-  {softeners.map((softener, index) => (
-    <div
-      key={softener.id}
-      className="softener-card"
-      style={{ animationDelay: `${index * 0.1}s` }}
-      onClick={() => handleProduct(softener.id)} // Add the click handler here
-    >
-      <div className="softener-image-container">
-        <img
-          src={softener.image}
-          alt={softener.title}
-          className="softener-image"
-        />
+        {softeners.map((softener, index) => (
+          <div
+            key={softener.id}
+            className="softener-card"
+            style={{ animationDelay: `${index * 0.1}s` }}
+            onClick={() => handleProduct(softener.id)} // Add the click handler here
+          >
+            <div className="softener-image-container">
+              <img
+                src={softener.image}
+                alt={softener.title}
+                className="softener-image"
+              />
+            </div>
+            <h3 className="softener-title">{softener.title}</h3>
+            <div className="arrow-container">
+              <button className="arrow-button">→</button>
+            </div>
+          </div>
+        ))}
       </div>
-      <h3 className="softener-title">{softener.title}</h3>
-      <div className="arrow-container">
-        <button className="arrow-button">→</button>
-      </div>
-    </div>
-  ))}
-</div>
 
 
 
@@ -285,45 +285,45 @@ const Products = () => {
 
 
       <div className="faq-container">
-      <h1>Frequently Asked Questions</h1>
-      <div className="faq-list">
-        {faqData.map((item, index) => (
-          <div 
-            key={index} 
-            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
-          >
-            <button 
-              className="faq-question"
-              onClick={() => toggleQuestion(index)}
-              aria-expanded={activeIndex === index}
+        <h1>Frequently Asked Questions</h1>
+        <div className="faq-list">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`faq-item ${activeIndex === index ? 'active' : ''}`}
             >
-              <span>{item.question}</span>
-              <svg 
-                className="chevron-icon"
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
+              <button
+                className="faq-question"
+                onClick={() => toggleQuestion(index)}
+                aria-expanded={activeIndex === index}
               >
-                <path 
-                  d="M6 9l6 6 6-6" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <div className="faq-answer">
-              <div className="answer-content">
-                {item.answer}
+                <span>{item.question}</span>
+                <svg
+                  className="chevron-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              <div className="faq-answer">
+                <div className="answer-content">
+                  {item.answer}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
 
 
     </div>
