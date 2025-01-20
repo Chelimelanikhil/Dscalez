@@ -2,14 +2,15 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 20px 0;
+
   background-color: #f8f8f8;
-  overflow-x: hidden; /* Prevent horizontal scroll during animations */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll during animations */
 }
 
 .header-section1 {
   width: 100%;
-  padding: 80px 0;
+  padding: 90px 10px;
   background: url("../../images/Productsbackground.png") no-repeat center;
   background-size: cover;
   position: relative;
@@ -147,12 +148,10 @@
   height: 100%;
   top: 0;
   left: -100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: 0.5s;
 }
 
@@ -177,6 +176,7 @@
     transform: translateY(-100px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -188,6 +188,7 @@
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -199,6 +200,7 @@
     transform: translateX(-100px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -210,6 +212,7 @@
     transform: translateX(100px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -221,6 +224,7 @@
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -256,6 +260,10 @@
 }
 
 @media (max-width: 480px) {
+  .header-section1 {
+    padding: 70px 10px;
+  }
+
   .benefit-content {
     padding: 30px 20px;
   }

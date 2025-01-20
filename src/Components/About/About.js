@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import experince from '../../images/experience.png'
+import experince from '../../images/About1.png'
 import storeImage from '../../images/storeImage.png'
 import locationIcon from '../../images/Location.png'
 

@@ -8,7 +8,7 @@
 
 .header-section-about {
   position: relative;
-  padding: 80px 0px;
+  padding: 90px 10px;
   background: url("../../images/Productsbackground.png") no-repeat center;
   background-size: cover;
 }
@@ -34,7 +34,7 @@
 }
 
 .section-container {
-  padding: 0 20px;
+  padding: 0;
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
@@ -45,6 +45,10 @@
   align-items: center;
   gap: 50px;
   justify-content: space-between;
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 100px;
+  gap: 30px;
 }
 
 .text-content {
@@ -78,7 +82,44 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.vision-mission-container {
+  max-width: 100vw;
+  margin: 60px auto;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  max-width: 1500px;
+  margin: auto;
+  padding: 100px;
+  gap: 30px;
+}
+
+.stores-section {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0px 100px 80px;
+
+}
+
+
 /* Media Queries for Responsive Design */
+
+@media (max-width: 1200px) {
+  .content-wrapper {
+    margin: 0 30px;
+    padding: 0;
+  }
+
+  .vision-mission-container {
+    margin: 0 30px;
+    padding: 50px 0;
+  }
+
+  .stores-section {
+    margin: 0 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .content-wrapper {
     flex-direction: column;
@@ -108,16 +149,36 @@
   }
 }
 
+.header-section-about {
+  position: relative;
+  padding: 90px 10px;
+  background: url("../../images/Productsbackground.png") no-repeat center;
+  background-size: cover;
+}
+
+
+@media (max-width: 480px) {
+  .header-section-about {
+    padding: 50px 10px;
+  }
+
+  .content-wrapper {
+    margin: 0 20px;
+  }
+
+  .vision-mission-container {
+    margin: 0 20px;
+    padding: 30px 0;
+  }
+
+  .stores-section {
+    margin: 0 20px;
+  }
+}
+
 /* About.css - Add these new styles to your existing CSS */
 
-.vision-mission-container {
-  max-width: 100vw;
-  margin: 60px auto;
-  padding: 0 20px;
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-}
+
 
 .vision-box,
 .mission-box {
@@ -146,7 +207,6 @@
 @media (max-width: 768px) {
   .vision-mission-container {
     flex-direction: column;
-    margin: 40px auto;
   }
 
   .vision-box,
@@ -156,11 +216,7 @@
 }
 
 
-.stores-section {
-  max-width: 100vw;
-  margin: 60px auto;
-  padding: 0 40px;
-}
+
 
 .stores-header {
   text-align: center;
@@ -245,11 +301,13 @@
   transition: opacity 0.3s ease;
   color: white;
   display: flex;
-  align-items: center; /* Centers text horizontally */
+  align-items: center;
+  /* Centers text horizontally */
   padding: 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  text-align: center; /* Align text center */
+  text-align: center;
+  /* Align text center */
 }
 
 .store-overlay h3 {
@@ -285,12 +343,6 @@
 }
 
 /* Header section styles */
-.header-section-about {
-  position: relative;
-  padding: 80px 0px;
-  background: url("../../images/Productsbackground.png") no-repeat center;
-  background-size: cover;
-}
 
 .about-section h1 {
   font-size: 32px;
@@ -314,7 +366,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .stores-section {
     padding: 0 30px;
   }
@@ -346,7 +398,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .stores-section {
     padding: 0 15px;
   }
@@ -366,7 +418,7 @@
   .stores-section {
     padding: 0 10px;
   }
-  
+
   .store-card {
     min-height: 300px;
   }

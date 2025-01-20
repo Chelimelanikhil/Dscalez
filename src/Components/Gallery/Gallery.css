@@ -8,9 +8,13 @@
 
 .header-section-gallery {
   position: relative;
-  padding: 80px 0px;
+  padding: 90px 10px;
   background: url("../../images/Productsbackground.png") no-repeat center;
   background-size: cover;
+}
+
+.ytp-chrome-top {
+  padding: 10px;
 }
 
 .wave-bg {
@@ -21,6 +25,12 @@
   height: 100%;
   opacity: 0.1;
   z-index: 1;
+}
+
+.gallery-container-gallery {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 100px 80px;
 }
 
 .gallery-section h1 {
@@ -34,22 +44,21 @@
 }
 
 .gallery-wrapper {
-  padding: 20px;
+  padding: 7px 0;
   max-width: 100vw;
   margin: 0 auto;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 64% 34%;
   gap: 15px;
   width: 100%;
-  height: 500px;
 }
 
 .gallery-grid1 {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 34% 64%;
   gap: 15px;
   width: 100%;
   height: 500px;
@@ -76,7 +85,15 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+  .gallery-container-gallery {
+    margin: 0 30px;
+    padding: 0;
+  }
+}
+
 @media (max-width: 768px) {
+
   .gallery-grid,
   .gallery-grid1 {
     grid-template-columns: 1fr;
@@ -91,14 +108,14 @@
 
   /* Small image styles - making it taller than large images */
   .gallery-item.small-image {
-    aspect-ratio: 9/16;  /* This creates a taller aspect ratio */
-  }.gallery-grid1 .gallery-item.large-image {
+    aspect-ratio: 9/16;
+    /* This creates a taller aspect ratio */
+  }
+
+  .gallery-grid1 .gallery-item.large-image {
     order: -1;
   }
 
-  .gallery-wrapper {
-    padding: 10px;
-  }
 
   /* Adjusting spacing between grid sections */
   .top-grid,
@@ -109,13 +126,19 @@
 
 /* Extra small devices */
 @media (max-width: 480px) {
-  .gallery-wrapper {
-    padding: 5px;
+  .header-section-gallery {
+    padding: 50px 10px;
   }
+
+  .gallery-container-gallery {
+    margin: 0 20px;
+    padding: 0;
+  }
+
   .gallery-grid1 .gallery-item.large-image {
     order: -1;
   }
-  
+
   .gallery-grid,
   .gallery-grid1 {
     gap: 15px;
@@ -123,19 +146,22 @@
 }
 
 .featured-video {
-  margin: 30px 0;  /* Increased margin for more space around the video */
+  margin: 7px 0;
+  /* Increased margin for more space around the video */
   border-radius: 12px;
   overflow: hidden;
   animation: zoomIn 1.5s ease-in-out;
-  max-width: 100vw;  /* Max width for large screens */
+  max-width: 100vw;
+  /* Max width for large screens */
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
 }
 
 .featured-video iframe {
-  width: 100%;  /* Ensures full width of the parent container */
-  height: 400px;  /* Increased height for a larger video */
+  width: 100%;
+  /* Ensures full width of the parent container */
+  height: 400px;
+  /* Increased height for a larger video */
   border-radius: 12px;
 }
 
@@ -144,4 +170,3 @@
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
 }
-

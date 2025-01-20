@@ -8,11 +8,12 @@
 
 .header-section-products {
   position: relative;
-  padding: 80px 10px;
+  padding: 90px 10px;
   background: url("../../images/Productsbackground.png") no-repeat center;
   background-size: cover;
   width: 100%;
 }
+
 .wave-bg {
   position: absolute;
   top: 0;
@@ -30,13 +31,15 @@
   font-weight: 600;
   position: relative;
   z-index: 2;
-  margin-top: -40px;
+  margin-top: -50px;
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -44,10 +47,12 @@
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -57,9 +62,11 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
@@ -69,7 +76,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  padding: 16px;
+
   max-width: 100vw;
   margin: 0 auto;
 }
@@ -144,25 +151,40 @@
   width: 100%;
 }
 
+@media screen and (min-width: 1200px) {
+  .softener-grid {
+    max-width: 1500px;
+    margin: auto;
+    padding: 0 100px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .softener-grid {
+    margin: 0 30px;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .softener-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 12px;
+    gap: 24px;
+
   }
+
+
 }
-
-@media screen and (min-width: 1200px) {
-  .softener-grid {
-   max-width: 1440px;
-  }
-}
-
-
 
 @media (max-width: 480px) {
+  .header-section-products {
+    padding: 50px 10px;
+  }
+
   .softener-grid {
     grid-template-columns: 1fr;
+    margin: 0 20px;
   }
 }
 
@@ -228,7 +250,9 @@
 
 @media screen and (min-width: 1200px) {
   .alternatives-section {
-    padding: 180px;
+    max-width: 1500px;
+    margin: auto;
+    padding: 100px;
   }
 }
 
@@ -306,7 +330,7 @@
   width: 100%;
   position: relative;
   padding: 0;
-  margin-top: 40px;
+
 }
 
 .benefits-label {
@@ -385,6 +409,7 @@
   .comparison-content {
     grid-template-columns: 50% 25% 25%;
   }
+
   .check-mark {
     width: 18px;
     height: 18px;
@@ -393,22 +418,23 @@
     justify-content: center;
     padding: 0px 50px;
   }
+
   .column {
     padding: 10px;
   }
-  
+
   .column.salt-free {
     padding: 10px;
   }
-  
+
   .system-name {
     font-size: 14px;
   }
-  
+
   .feature-name {
-    font-size: 12px;
+    font-size: 16x;
   }
- 
+
   .feature-name::after {
     width: 50%;
   }
@@ -544,9 +570,10 @@
 
 @media screen and (min-width: 1200px) {
   .testimonial-container {
-    
-    padding: 224px;
-    
+    max-width: 1500px;
+    margin: auto;
+    padding: 100px;
+
   }
 }
 
@@ -569,7 +596,7 @@
     height: auto;
   }
 
-  .video-placeholder, 
+  .video-placeholder,
   .video-overlay,
   .youtube-iframe {
     position: absolute;
@@ -604,10 +631,12 @@
 
 /* Additional styles to ensure video visibility */
 @supports not (aspect-ratio: 16/9) {
+
   /* Fallback for browsers that don't support aspect-ratio */
   .video-wrapper {
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
   }
 }
 
@@ -619,7 +648,7 @@
 }
 
 .faq-container h1 {
-  font-size: 36px;
+  font-size: 40px;
   text-align: center;
   color: #000;
   font-weight: 600;
@@ -708,6 +737,12 @@
 
 @media screen and (min-width: 1200px) {
   .faq-container {
-    padding: 60px 200px;
+    max-width: 1500px;
+    margin: auto;
+    padding: 100px;
+  }
+
+  .faq-container h1 {
+    margin-bottom: 30px;
   }
 }

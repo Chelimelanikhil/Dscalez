@@ -297,7 +297,7 @@ export default function Home() {
 
       <section className="benefits-section-container">
         <h2 className="benefits-title">
-          Experience life changing purity with
+          Experience life changing purity with<br></br>
           Dscalez clean water solutions
         </h2>
 
