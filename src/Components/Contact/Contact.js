@@ -8,9 +8,6 @@ import Mail from '../../images/Mail.png';
 import Location from '../../images/Location.png';
 import Phone from '../../images/Phone.png';
 
-
-
-
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,6 +15,13 @@ const ContactSection = () => {
     phone: '',
     message: ''
   });
+
+  const [status, setStatus] = useState({
+    message: '',
+    type: '' // 'success' or 'error'
+  });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,15 +31,62 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    setLoading(true);
+    setStatus({ message: '', type: '' });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'f30defa0-147e-47be-888b-bc137613d622', // Replace with your access key
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message
+        })
+      });
+
+      const result = await response.json();
+      if (response.status === 200) {
+        setStatus({
+          message: 'Thank you for contacting us! We will get back to you soon.',
+          type: 'success'
+        });
+        // Clear form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        setStatus({
+          message: result.message || 'Something went wrong. Please try again later.',
+          type: 'error'
+        });
+      }
+    } catch (error) {
+      setStatus({
+        message: 'Something went wrong. Please try again later.',
+        type: 'error'
+      });
+    } finally {
+      setLoading(false);
+      // Clear status after 5 seconds
+      setTimeout(() => {
+        setStatus({ message: '', type: '' });
+      }, 5000);
+    }
   };
 
   return (
     <div className='contact-section'>
-
       <div className="header-section-contact">
         <h1>Contact Us</h1>
       </div>
@@ -48,7 +99,7 @@ const ContactSection = () => {
 
             <div className="contact-details">
               <div className="contact-item">
-                <div className="icon"> <img src={Phone} alt="Facebook" /></div>
+                <div className="icon"><img src={Phone} alt="Phone" /></div>
                 <div className="info">
                   <h3>Phone</h3>
                   <p>(+081) 9678 1234</p>
@@ -56,7 +107,7 @@ const ContactSection = () => {
               </div>
 
               <div className="contact-item">
-                <div className="icon"><img src={Mail} alt="Facebook" /></div>
+                <div className="icon"><img src={Mail} alt="Email" /></div>
                 <div className="info">
                   <h3>Email</h3>
                   <p>mail@nursee.com</p>
@@ -64,14 +115,12 @@ const ContactSection = () => {
               </div>
 
               <div className="contact-item">
-                <div className="icon"><img src={Location} alt="Facebook" /></div>
+                <div className="icon"><img src={Location} alt="Location" /></div>
                 <div className="info">
                   <h3>Address</h3>
                   <p>London Eye, London</p>
                 </div>
               </div>
-
-
             </div>
 
             <div className="social-media-icons">
@@ -133,7 +182,18 @@ const ContactSection = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="submit-button">SUBMIT BUTTON</button>
+              <button 
+                type="submit" 
+                className="submit-button"
+                disabled={loading}
+              >
+                {loading ? 'SENDING...' : 'SUBMIT'}
+              </button>
+              {status.message && (
+                <div className={`status-message ${status.type}`}>
+                  {status.message}
+                </div>
+              )}
             </form>
           </div>
         </div>

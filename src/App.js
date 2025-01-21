@@ -6,25 +6,29 @@ import About from './Components/About/About';
 import Benefits from './Components/Benefits/Benefits';
 import Products from './Components/Products/products';
 import Gallery from './Components/Gallery/Gallery';
-
 import Contact from './Components/Contact/Contact';
 import ProductDetail from './Components/ProductDetail/ProductDetail';
+import WhatsappLauncher from './Components/launcher/WhatsappLauncher';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/benefits" element={<Benefits />} />
-        <Route path="/gallery" element={<Gallery />} />-
-        <Route path="/product-details" element={<ProductDetail />} />
-
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <div className="app-container">
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/benefits" element={<Benefits />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/product-details" element={<ProductDetail />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <WhatsappLauncher phoneNumber="+081 9678 1234" /> {/* Replace with your actual WhatsApp number */}
+        <Footer />
+      </div>
     </Router>
   );
 }
