@@ -282,7 +282,7 @@ const ProductDetail = () => {
           recommendations based on your home, water usage, test results, and any
           other concerns.
         </p>
-        <button className="consultation-btn">Schedule Free Water Consultation</button>
+        <button className="consultation-product-btn">Schedule Free Water Consultation</button>
       </div>
 
       {/* Image Section */}
