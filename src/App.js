@@ -26,7 +26,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
-        <WhatsappLauncher phoneNumber="+081 9678 1234" /> {/* Replace with your actual WhatsApp number */}
+        <WhatsappLauncher phoneNumber="+91 8008363648" /> {/* Replace with your actual WhatsApp number */}
         <Footer />
       </div>
     </Router>

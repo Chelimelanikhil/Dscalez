@@ -80,12 +80,12 @@ export default function Home() {
   const benefits = [
     {
       image: machine,
-      text: 'Removes 99% of Impurities',
+      text: 'Enhances appliation lifespan',
       gridArea: 'top-left'
     },
     {
       image: group,
-      text: 'Get Smooth & Soft Skin',
+      text: 'Softens & smooths Skin',
       gridArea: 'top-center',
       featured: true
     },
