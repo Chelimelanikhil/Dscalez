@@ -39,11 +39,11 @@ const Footer = () => {
           <div className="contact-details">
             <div className="phone-number">
               <img src={phone} alt="Phone" className="icons" />
-              <span>+91 8008363648</span>
+              <span>+91 99637 13648</span>
             </div>
             <div className="email">
               <img src={mail} alt="Email" className="icons" />
-              <span>dscalez@email.com</span>
+              <span>info@aquapot.in</span>
             </div>
             <div className="social-links">
               <a href="#" className="social-icon">
@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="footer-section map-section">
           <iframe
             title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8430437991865!2d144.9537353159188!3d-37.81627974270547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5778b8b9a79c15c!2sGoogle!5e0!3m2!1sen!2sin!4v1611828265783!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.9473559319956!2d78.48667157463846!3d17.43843098365612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99f22ebcf9a3%3A0xa9b4c0c9f25b6c77!2sHyderbasti%2C%20Rani%20Gunj%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"

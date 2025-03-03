@@ -218,16 +218,13 @@
 
 
 
-.stores-header {
-  text-align: center;
-  margin-bottom: 40px;
+.store-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.stores-header h2 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #000;
-}
+
 
 .stores-grid {
   display: grid;
@@ -239,119 +236,43 @@
 
 .store-card {
   position: relative;
-  overflow: hidden;
+  background-color: white;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 3px solid lightgrey;
+  padding: 10px 20px;
   aspect-ratio: 3/4;
   width: 100%;
-}
-
-.store-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  height: 100%;
-  width: 100%;
-}
-
-.store-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
-}
-
-.store-location {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 15px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: opacity 0.3s ease;
-}
-
-.store-card:hover .store-overlay {
-  opacity: 1;
-}
-
-.store-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  color: white;
-  display: flex;
-  align-items: center;
-  /* Centers text horizontally */
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-  /* Align text center */
 }
 
-.store-overlay h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: white;
-}
-
-.store-details {
-  font-size: 14px;
-  line-height: 1;
-}
-
-.store-details p {
-  margin: 6px 0;
-  color: white;
-}
-
-.store-details a {
-  color: white;
-  text-decoration: none;
-}
-
-.store-details a:hover {
-  text-decoration: underline;
-}
-
-/* Location icon style */
-.location-icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* Header section styles */
-
-.about-section h1 {
-  font-size: 32px;
-  color: #1a1a1a;
-  text-align: center;
+.store-city {
+  color: #03587C;
+  font-size: 24px;
   font-weight: 600;
-  position: relative;
-  z-index: 2;
-  margin-top: -40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.store-address {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.location-icon {
+  margin-left: -10px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.store-address p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
 }
 
 /* Media Queries */
@@ -428,3 +349,6 @@
     margin-bottom: 10px;
   }
 }
+
+
+

@@ -87,38 +87,40 @@ const Products = () => {
 
   const faqData = [
     {
-      question: "What is water hardness?",
-      answer: "Water hardness refers to the mineral content in your water, particularly calcium and magnesium..."
+      question: "What is a water softener, and why do I need one?",
+      answer: "A water softener removes minerals like calcium and magnesium that cause hard water. It protects your plumbing, extends appliance life, and improves skin and hair health."
     },
     {
-      question: "What is water softening?",
-      answer: "Water softening is the process of removing calcium, magnesium, and other metal cations from hard water..."
+      question: "How do water softeners work?",
+      answer: "Water softeners use ion exchange to replace hard minerals with sodium or potassium ions, reducing scale buildup and delivering soft water throughout your home."
     },
     {
-      question: "How does the water softening process work?",
-      answer: "The water softening process works through ion exchange, replacing hard minerals with sodium ions..."
+      question: "What are the benefits of using a water softener?",
+      answer: "Soft water prevents scale buildup, reduces dry skin and hair, improves the efficiency of soaps, and extends the lifespan of appliances like washing machines and water heaters."
     },
     {
-      question: "What is a water softening system and how does it work?",
-      answer: "A water softening system is a home appliance that removes hardness minerals from your water..."
+      question: "What’s the difference between a salt-based and a salt-free water softener?",
+      answer: "A salt-based system removes hard minerals, while a salt-free system conditions water by preventing minerals from forming scale. Both improve water quality but work differently."
     },
     {
-      question: "What are the benefits of water softening?",
-      answer: "Water softening provides numerous benefits including reduced scale buildup, better soap lathering..."
+      question: "Can a water softener remove harmful contaminants?",
+      answer: "Traditional water softeners focus on removing hard minerals. For harmful contaminants like chlorine, bacteria, or heavy metals, a water filtration system is recommended."
     },
     {
-      question: "How much does a water softening system cost?",
-      answer: "The cost of a water softening system varies depending on size, features, and installation..."
+      question: "Is maintenance required for a water softener?",
+      answer: "Yes, regular maintenance includes refilling salt, cleaning the brine tank, and occasionally replacing parts to ensure your system works efficiently and lasts longer."
     },
     {
-      question: "How long does a home water softening system last?",
-      answer: "A well-maintained water softening system typically lasts 10-15 years..."
+      question: "Will a water softener increase my water bill?",
+      answer: "A water softener uses a small amount of water during its regeneration cycle. However, it can save money over time by reducing plumbing issues and extending appliance lifespan."
     },
     {
-      question: "How do I choose the best water softening system for my home?",
-      answer: "Choosing the best water softening system depends on your water hardness level, household size..."
+      question: "How do I know which water softener is right for my home?",
+      answer: "The right system depends on your water hardness level, household size, and water usage. Schedule a consultation to get a personalized recommendation."
     }
   ];
+  
+  
 
 
   const toggleQuestion = (index) => {

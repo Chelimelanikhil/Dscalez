@@ -385,9 +385,9 @@ export default function Home() {
 
       <section className="reason-section">
         <h2 className="reason-title">We're Number #1 For A Reason</h2>
-        <div className="reason-cards">
+        <div className="reason-cards" >
           {reasons.map((reason, index) => (
-            <div key={index} className="reason-card">
+            <div key={index} className="reason-card" style={{background:'white'}}>
               <h3 className="reason-card-title">{reason.title}</h3>
               <h4 className="reason-card-subtitle">{reason.subtitle}</h4>
               <p className="reason-card-description">{reason.description}</p>
