@@ -10,16 +10,20 @@
 /* Image section styles */
 .image-section {
   flex: 1;
+  
 }
 
 .main-image {
   width: 100%;
-  height: auto;
+  height: 400px;
   border-radius: 8px;
   margin-bottom: 20px;
-  object-fit: cover;
+  
 }
-
+.product-image-details{
+  height: 400px;
+  margin-left: 30px;
+}
 .gallery-container {
   position: relative;
   padding-right: 80px;

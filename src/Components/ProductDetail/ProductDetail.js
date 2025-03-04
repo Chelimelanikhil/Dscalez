@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './ProductDetail.css';
 import main from '../../images/main.png';
+import main1 from '../../images/main1.png';
+
 import daigram from '../../images/diagram.png';
 import pd from '../../images/pd.png'
 import baby from '../../images/baby_taking_a_bath.png.png'
@@ -11,7 +13,7 @@ const ProductDetail = () => {
     const [activeTab, setActiveTab] = useState('details');
 
     const images = [
-        main,
+        main1,
         daigram,
         '/product-detail.jpg',
         '/product-specs.jpg'
@@ -168,7 +170,7 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                             <div className="image-section">
-                                <img src={pd} alt="Product" className="product-image-details" />
+                                <img src={main1} alt="Product" className="product-image-details" />
                             </div>
                         </div>
                     </div>
