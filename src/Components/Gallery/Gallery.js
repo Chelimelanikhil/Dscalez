@@ -1,6 +1,15 @@
 import React, { useEffect } from 'react';
 import './Gallery.css';
 import featuredImagepic from '../../images/featuredimage.png';
+import one from '../../images/one.png';
+import two from '../../images/two.png';
+import three from '../../images/three.jpg';
+import four from '../../images/four.png';
+import five from '../../images/five.jpg';
+import six from '../../images/six.jpg';
+import seven from '../../images/seven.jpg';
+
+
 
 const Gallery = () => {
   const useScrollAnimation = () => {
@@ -41,13 +50,13 @@ const Gallery = () => {
             <div className="gallery-grid">
               <div className="gallery-item large-image">
                 <img
-                  src={featuredImagepic}
+                  src={one}
                   alt="Team at Aquapot exhibition stand"
                 />
               </div>
               <div className="gallery-item small-image">
                 <img
-                  src={featuredImagepic}
+                  src={two}
                   alt="Individual portrait outdoors"
                 />
               </div>
@@ -58,13 +67,13 @@ const Gallery = () => {
             <div className="gallery-grid1">
               <div className="gallery-item small-image">
                 <img
-                  src={featuredImagepic}
+                  src={three}
                   alt="Individual portrait outdoors"
                 />
               </div>
               <div className="gallery-item large-image">
                 <img
-                  src={featuredImagepic}
+                  src={four}
                   alt="Team at Aquapot exhibition stand"
                 />
               </div>
@@ -100,7 +109,7 @@ const Gallery = () => {
               </div>
               <div className="gallery-item small-image">
                 <img
-                  src={featuredImagepic}
+                  src={five}
                   alt="Individual portrait outdoors"
                 />
               </div>
@@ -111,13 +120,13 @@ const Gallery = () => {
             <div className="gallery-grid1">
               <div className="gallery-item small-image">
                 <img
-                  src={featuredImagepic}
+                  src={six}
                   alt="Individual portrait outdoors"
                 />
               </div>
               <div className="gallery-item large-image">
                 <img
-                  src={featuredImagepic}
+                  src={seven}
                   alt="Team at Aquapot exhibition stand"
                 />
               </div>
